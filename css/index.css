@@ -1,0 +1,22 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: white;
+
+}
+.wrapper {
+    align-content: center;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 3fr 1.75fr .25fr;
+}
