@@ -1,11 +1,8 @@
 'use strict';
-
-
 let categoryType = 10;
 let questionNumber = 10;
 let questionDifficulty = 'medium';
 let x = 0;
-
 document.addEventListener('DOMContentLoaded', () =>{
     localStorage.removeItem('questions')
     localStorage.removeItem('correctCounter')
@@ -46,11 +43,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
     getCategories()
 })
-
-
-
 const submitButton = document.querySelector('#submitForm')
-
 submitButton.addEventListener('click', e =>{
     const categorySelect = document.getElementById('category')
     const questionDiff = document.getElementById('difficulty')
