@@ -52,7 +52,6 @@ submitButton.addEventListener('click', e =>{
     const url = `https://opentdb.com/api.php?amount=${questionNum.value}&category=${categorySelect.value}&difficulty=${questionDiff.value.toLowerCase()}&type=multiple`
     console.log(url)
     get(url).then(questions =>{
-        console.log(questions.results[0].correct_answer)
         questionsArr = questions.results
         console.log(questionsArr)
         x = 1;
