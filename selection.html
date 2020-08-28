@@ -5,37 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selection Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-<div class="wrapper">
-    <header>
-        <h1>Selection Menu</h1>
-    </header>
-    <main>
-        <form id="selection-menu">
-            <label>
-                Number of Questions:
-                <select id="questionNum" value="" >
-                    <option placeholder="" required>##</option>
-                </select>
-            </label>
-            <label>
-                Categories:
-                <select id="category" value="category">
-                    <option value = "">Any Category</option>
-                </select>
-            </label>
-            <label>
-                Difficulty:
-                <select id="difficulty">
-                    <option value = "">Any Difficulty</option>
-                </select>
-            </label>
-                    <div id='submitForm' class="play-game">Play Game
+    <div class="wrapper">
+        <header>
+            
+        </header>
+        <main class="selection-wrapper">
+            <div class="selection">
+                <h1>Selection Menu</h1>
+                <form id="selection-menu" class="selection-menu">
+                    <label>
+                        Number of Questions:
+                        <select id="questionNum"> 
+
+                        </select>
+                    </label>
+                    <label>
+                        Categories:
+                        <select id="category" value="category">
+                            <option value = "">Any Category</option>
+                        </select>
+                    </label>
+                    <label>
+                        Difficulty:
+                        <select id="difficulty">
+                            <option value = "">Any Difficulty</option>
+                        </select>
+                    </label>
+
+            </div>
+        
+            <div class="lets-begin" id="lets-begin">
+                <a href="gamescreen.html">
+                    <div id='submitForm' class="play-game">GAME ON
                     </div>
-        <script src="js/get.js"></script>
-        <script src="js/index.js"></script>    
-    </body>
+                </a>
+            </div>
+                
+        </main>
+    </div>
+</body>
+   <footer class="footer">
+        <ul class="links">
+            <li><a class="active" href="selection.html">Selection</a></li>
+            <!-- <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li> -->
+        </ul>
+        <section class="copyright">
+            <p>&#169; Yogurt Board</p>
+        </section>
+    </footer> 
+<script src="js/get.js"></script>
+<script src="js/index.js"></script>    
+
 
 </html>
