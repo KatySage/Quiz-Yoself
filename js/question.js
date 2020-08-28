@@ -1,5 +1,5 @@
 'use strict';
-//Katy this will be something you can use I will have to use independent IDs for each button to get them to change with event listeners...
+
 const storedQuestions = JSON.parse(localStorage.getItem("questions"))
 console.log(storedQuestions)
 const questionAsked = document.getElementById('question')
@@ -9,10 +9,10 @@ const nextQsButton = document.getElementById('btnNext')
 const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
+
+
 const updateButtons = () => {
-    console.log(questionIterator)
     const answerButtons = document.querySelectorAll('#btn')
-    //const answerButton2 = document.querySelector('#btn')
     questionAsked.innerHTML= (storedQuestions[questionIterator].question)
 
     function getRandomInt(max) {
@@ -42,31 +42,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 nextQsButton.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if (questionIterator === storedQuestions.length){
+        window.location.replace('results.html')
+    }
     buttonNeutral();
     updateButtons();
     questionIterator++;
     submitQsButton.style.display = "block"
     nextQsButton.style.display = "none"
     answerSelected = false
-
 });
 
-// answerButtons.forEach(btn=>{
-//     btn.addEventListener('click',(e)=>{
-//         e.preventDefault()
-//         console.log('clicked')
-//         //btn.innerHTML = 'boom'
-//         console.log(storedQuestions[questionIterator].correct_answer)
-//         if (btn.innerHTML === storedQuestions[questionIterator].correct_answer){
-//             console.log('yep')
-//             btn.classList.toggle('correct')
-//         }
-//         else {
-//             console.log(btn.innerHTML)
-//             btn.classList.toggle('incorrect')
-//         }
-//     })
-// })
 
 (function (){
     answerButtons.forEach(btn=>{
@@ -82,6 +69,7 @@ nextQsButton.addEventListener('click', (e)=>{
         })
     })
 })();
+let correctCounter = 0
 submitQsButton.addEventListener('click', (e)=>{
     const resultDisplay = document.getElementById('result')
     let answer = ""
@@ -105,9 +93,11 @@ submitQsButton.addEventListener('click', (e)=>{
                     console.log(btn.innerHTML)
                     btn.classList.toggle('incorrect')
                 }
+                console.log("correct counter", correctCounter)
                 if (answer === storedQuestions[questionIterator-1].correct_answer){
                     resultDisplay.innerHTML = "CORRECT!!!"
-                    //ADD CORRECT QUESTION COUNTER HERE}
+                    correctCounter += 1
+                    }
                 else {
                     resultDisplay.innerHTML = "INCORRECT!!!"
                 }
@@ -117,7 +107,9 @@ submitQsButton.addEventListener('click', (e)=>{
     
         buttonChange()
     
-    
+    if (questionIterator === storedQuestions.length){
+        nextQsButton.innerHTML = "Results"  
+    } 
     nextQsButton.style.display = "block"
     submitQsButton.style.display = "none"}
 })
@@ -132,3 +124,4 @@ const buttonNeutral = () =>{
     })
     resultDisplay.innerHTML=""
 }
+localStorage.setItem("correctCounter", JSON.stringify(correctCounter))
