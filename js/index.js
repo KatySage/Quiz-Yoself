@@ -61,4 +61,3 @@ submitButton.addEventListener('click', e =>{
         window.location.replace('gamescreen.html')
     })
 });
-
