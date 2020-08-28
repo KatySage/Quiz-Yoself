@@ -6,6 +6,8 @@ const questionAsked = document.getElementById('question')
 let questionIterator = 0;
 const submitQsButton = document.getElementById('btnSubmit')
 const nextQsButton = document.getElementById('btnNext')
+const answerButtons = document.querySelectorAll('#btn')
+let answerSelected = false;
 
 const updateButtons = () => {
     console.log(questionIterator)
@@ -40,14 +42,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 nextQsButton.addEventListener('click', (e)=>{
-
+    buttonNeutral();
     updateButtons();
     questionIterator++;
     submitQsButton.style.display = "block"
     nextQsButton.style.display = "none"
+    answerSelected = false
 
-
-})
+});
 
 // answerButtons.forEach(btn=>{
 //     btn.addEventListener('click',(e)=>{
@@ -65,12 +67,35 @@ nextQsButton.addEventListener('click', (e)=>{
 //         }
 //     })
 // })
+
+(function (){
+    answerButtons.forEach(btn=>{
+        btn.addEventListener('click', e=>{
+            const removeAll = () =>{
+                answerButtons.forEach(button =>{
+                    button.classList.remove('selected')
+                })
+            }
+            removeAll()
+            btn.classList.toggle('selected')
+            answerSelected = true
+        })
+    })
+})();
 submitQsButton.addEventListener('click', (e)=>{
-    const buttonChange = () =>{
-        const answerButtons = document.querySelectorAll('#btn')
-        answerButtons.forEach(btn=>{
-                console.log('clicked')
-                //btn.innerHTML = 'boom'
+    const resultDisplay = document.getElementById('result')
+    let answer = ""
+    if (!answerSelected){
+        resultDisplay.innerHTML=('Please select an answer')
+    }
+    else{
+        const buttonChange = () =>{
+            answerButtons.forEach(btn=>{
+                if (btn.classList.contains("selected")){
+                    answer = btn.innerHTML
+                    console.log('clicked')
+                }
+                    //btn.innerHTML = 'boom'
                 console.log(storedQuestions[questionIterator-1].correct_answer)
                 if (btn.innerHTML === storedQuestions[questionIterator-1].correct_answer){
                     console.log('yep')
@@ -80,10 +105,30 @@ submitQsButton.addEventListener('click', (e)=>{
                     console.log(btn.innerHTML)
                     btn.classList.toggle('incorrect')
                 }
-
-        })
-    }
-    buttonChange()
+                if (answer === storedQuestions[questionIterator-1].correct_answer){
+                    resultDisplay.innerHTML = "CORRECT!!!"
+                    //ADD CORRECT QUESTION COUNTER HERE}
+                else {
+                    resultDisplay.innerHTML = "INCORRECT!!!"
+                }
+            
+            })
+        }
+    
+        buttonChange()
+    
+    
     nextQsButton.style.display = "block"
-    submitQsButton.style.display = "none"
+    submitQsButton.style.display = "none"}
 })
+
+const buttonNeutral = () =>{
+    const answerButtons = document.querySelectorAll('#btn')
+    const resultDisplay = document.getElementById('result')
+    answerButtons.forEach(btn=>{
+        btn.classList.remove('correct')
+        btn.classList.remove('incorrect')
+        btn.classList.remove('selected')
+    })
+    resultDisplay.innerHTML=""
+}
