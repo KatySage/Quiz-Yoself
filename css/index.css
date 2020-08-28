@@ -76,7 +76,7 @@ header {
 }
 
 
-.lets-begin {
+.lets-begin, .play-game {
     background-color: #173bd0;
     border-radius: 50px;
     font-size: medium;
@@ -113,6 +113,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+}
+
+.selection-menu label {
+    margin: 8px 0;
 }
 
 
@@ -121,10 +126,10 @@ header {
 
 
 .play-game{
-    width: 6rem;
     text-align: center;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     text-decoration: none;
+    margin-top: 13px;
 }
 
 .selected {
