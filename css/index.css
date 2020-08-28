@@ -20,3 +20,18 @@ body {
     grid-template-rows: 2fr 1fr;
     grid-template-columns: 3fr 1.75fr .25fr;
 }
+.play-game{
+    width: 6rem;
+    text-align: center;
+    border: 1px solid green;
+    text-decoration: none;
+}
+
+.correct {
+    border: 2px solid greenyellow;
+    background-color: lawngreen;
+}
+.incorrect {
+    border: 2px solid darkred;
+    background-color: red;
+}
