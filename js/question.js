@@ -1,16 +1,18 @@
 'use strict';
-//Katy this will be something you can use I will have to use independent IDs for each button to get them to change with event listeners...
+
 const storedQuestions = JSON.parse(localStorage.getItem("questions"))
 console.log(storedQuestions)
 const questionAsked = document.getElementById('question')
 let questionIterator = 0;
 const submitQsButton = document.getElementById('btnSubmit')
 const nextQsButton = document.getElementById('btnNext')
+const answerButtons = document.querySelectorAll('#btn')
+let answerSelected = false;
+
+
 
 const updateButtons = () => {
-    console.log(questionIterator)
     const answerButtons = document.querySelectorAll('#btn')
-    //const answerButton2 = document.querySelector('#btn')
     questionAsked.innerHTML= (storedQuestions[questionIterator].question)
 
     function getRandomInt(max) {
@@ -40,37 +42,48 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 nextQsButton.addEventListener('click', (e)=>{
-
+    e.preventDefault();
+    if (questionIterator === storedQuestions.length){
+        window.location.replace('results.html')
+    }
+    buttonNeutral();
     updateButtons();
     questionIterator++;
     submitQsButton.style.display = "block"
     nextQsButton.style.display = "none"
+    answerSelected = false
+});
 
 
-})
-
-// answerButtons.forEach(btn=>{
-//     btn.addEventListener('click',(e)=>{
-//         e.preventDefault()
-//         console.log('clicked')
-//         //btn.innerHTML = 'boom'
-//         console.log(storedQuestions[questionIterator].correct_answer)
-//         if (btn.innerHTML === storedQuestions[questionIterator].correct_answer){
-//             console.log('yep')
-//             btn.classList.toggle('correct')
-//         }
-//         else {
-//             console.log(btn.innerHTML)
-//             btn.classList.toggle('incorrect')
-//         }
-//     })
-// })
+(function (){
+    answerButtons.forEach(btn=>{
+        btn.addEventListener('click', e=>{
+            const removeAll = () =>{
+                answerButtons.forEach(button =>{
+                    button.classList.remove('selected')
+                })
+            }
+            removeAll()
+            btn.classList.toggle('selected')
+            answerSelected = true
+        })
+    })
+})();
+let correctCounter = 0
 submitQsButton.addEventListener('click', (e)=>{
-    const buttonChange = () =>{
-        const answerButtons = document.querySelectorAll('#btn')
-        answerButtons.forEach(btn=>{
-                console.log('clicked')
-                //btn.innerHTML = 'boom'
+    const resultDisplay = document.getElementById('result')
+    let answer = ""
+    if (!answerSelected){
+        resultDisplay.innerHTML=('Please select an answer')
+    }
+    else{
+        const buttonChange = () =>{
+            answerButtons.forEach(btn=>{
+                if (btn.classList.contains("selected")){
+                    answer = btn.innerHTML
+                    console.log('clicked')
+                }
+                    //btn.innerHTML = 'boom'
                 console.log(storedQuestions[questionIterator-1].correct_answer)
                 if (btn.innerHTML === storedQuestions[questionIterator-1].correct_answer){
                     console.log('yep')
@@ -80,10 +93,35 @@ submitQsButton.addEventListener('click', (e)=>{
                     console.log(btn.innerHTML)
                     btn.classList.toggle('incorrect')
                 }
-
-        })
-    }
-    buttonChange()
+                console.log("correct counter", correctCounter)
+                if (answer === storedQuestions[questionIterator-1].correct_answer){
+                    resultDisplay.innerHTML = "CORRECT!!!"
+                    correctCounter += 1
+                    }
+                else {
+                    resultDisplay.innerHTML = "INCORRECT!!!"
+                }
+            
+            })
+        }
+    
+        buttonChange()
+    
+    if (questionIterator === storedQuestions.length){
+        nextQsButton.innerHTML = "Results"  
+    } 
     nextQsButton.style.display = "block"
-    submitQsButton.style.display = "none"
+    submitQsButton.style.display = "none"}
 })
+
+const buttonNeutral = () =>{
+    const answerButtons = document.querySelectorAll('#btn')
+    const resultDisplay = document.getElementById('result')
+    answerButtons.forEach(btn=>{
+        btn.classList.remove('correct')
+        btn.classList.remove('incorrect')
+        btn.classList.remove('selected')
+    })
+    resultDisplay.innerHTML=""
+}
+localStorage.setItem("correctCounter", JSON.stringify(correctCounter))
