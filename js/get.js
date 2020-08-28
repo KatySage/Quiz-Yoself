@@ -1,4 +1,4 @@
-let questionsArr = [];
+
 
 function get(url){
     //fetch the data
@@ -10,7 +10,8 @@ function get(url){
             return data;
         })
     }
-console.log(questionsArr)
+
+
 
 const questionPageHTML = `<div class="wrapper" id="wrapper">
 <div class="question" id="question">

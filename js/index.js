@@ -8,7 +8,7 @@ let x = 0
 
 if (x === 0){
     document.addEventListener('DOMContentLoaded', () =>{
-        console.log('thi works')
+        console.log('this works')
         //
         const getQuestionNum = () => {
             const questionNum = document.getElementById('questionNum')
@@ -59,6 +59,7 @@ const submitButton = document.querySelector('#submitForm')
 const HTMLBody = document.querySelector('body')
 
 submitButton.addEventListener('click', e =>{
+    let questionsArr = [];
     console.log(questionsArr)
     //const submitButtonPressed = () => {
         // const url = `https://opentdb.com/api.php?amount=${questionNumber}&category=${categoryType}&difficulty=${questionDifficulty}`
@@ -69,59 +70,14 @@ submitButton.addEventListener('click', e =>{
             questionsArr = questions.results
             console.log(questionsArr)
             x = 1;
-            HTMLBody.innerHTML = questionPageHTML
-            updateButtons()
+            //HTMLBody.innerHTML = questionPageHTML
+            //updateButtons()
             console.log('after')
-            //window.location.replace('gamescreen.html')
+            localStorage.setItem("questions", JSON.stringify(questionsArr))
+            window.location.replace('gamescreen.html')
         })
         //window.location.replace('gamescreen.html')
         //console.log(questionsArr)
     }
     //submitButtonPressed()
 );
-console.log(x)
-const updateButtons = () => {
-    console.log(questionsArr)
-    const answerButtons = document.querySelectorAll('#btn')
-    const answerButton2 = document.querySelector('#btn')
-
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-      }
-    const setButtonVal = () => {
-        let answer = getRandomInt(4)
-        let j = 0;
-        for (let i = 0; i < answerButtons.length; i++){
-            if (i === answer){
-                btn[i].innerHTML = questionsArr[0].correct_answer
-            }
-            else{
-                btn[i].innerHTML = questionsArr[0].incorrect_answers[j]
-                j++
-            }
-        }
-    };
-
-    setButtonVal();
-    const buttonChange = () =>{
-        answerButtons.forEach(btn=>{
-            btn.addEventListener('click',(e)=>{
-                e.preventDefault()
-                console.log('clicked')
-                //btn.innerHTML = 'boom'
-                console.log(questionsArr[0].correct_answer)
-                if (btn.innerHTML === questionsArr[0].correct_answer){
-                    console.log('yep')
-                    btn.classList.toggle('correct')
-                }
-                else {
-                    console.log(btn.innerHTML)
-                    btn.classList.toggle('incorrect')
-                }
-            })
-        })
-    }
-
-    buttonChange()
-}
-
