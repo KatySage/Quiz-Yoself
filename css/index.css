@@ -92,11 +92,12 @@ header {
 
 .selection-wrapper {
     height: 100%;
-    min-height: 80vh;
+    /* min-height: 80vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 91px;
 }
 
 .selection {
@@ -196,7 +197,7 @@ select {
 .play-game {
     text-align: center;
     text-decoration: none;
-    margin-top:100px;
+    margin-top:80px;
 }
 
 
@@ -254,10 +255,7 @@ header {
     
 }
 
-.answer {
-    /* background-color: #efefef; */
 
-}
 
 
 
@@ -267,9 +265,10 @@ header {
     border: none;
     border-radius: 6px;
     color: #efefef;
-    margin-top: 16px;
+    margin: 16px auto 0px;
     padding: 12px 16px;
     font-size: medium;  
+    text-align: center;
 }
 
 
@@ -298,4 +297,14 @@ header {
 .result {
     color: #efefef;
     font-size: large;
+    padding-top: 25px;
 }
+
+.next {
+    background-color: #d01798;
+    color: #efefef;
+    margin: 0 auto;
+}
+
+
+/* RESULTS */
