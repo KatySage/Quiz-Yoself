@@ -275,8 +275,13 @@ header {
 
 
 .selected {
-    border: 2px solid rgb(101, 24, 227);
-    background-color: blue;
+    border: none;
+    background-color: #173bd0;
+    color: #efefef;
+}
+
+.selected:focus {
+    outline: none;
 }
 .correct {
     border: none;
@@ -286,8 +291,8 @@ header {
 }
 .incorrect {
     border: none;
-    background-color: #c32e21;
-    color: #efefef;
+    background-color: #efefef;
+    color: #bb1133;
 }
 
 .result {
