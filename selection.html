@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <header>
+        <a href="entry.html" class="back-selection">Home &#10558;</a>
+    </header>
     <div class="wrapper">
         <header>
             
@@ -20,27 +23,27 @@
                 <form id="selection-menu" class="selection-menu">
               
                     <label>
-                        Number of Questions:
-                        <select id="questionNum"> 
-                            <option required value=""> -- </option>
+                        <p class="text-pad">Number of Questions:</p>
+                        <select id="questionNum" class="questionNum"> 
+                            <option required value="">Select number</option>
                         </select>
                     </label>
                     <label>
-                        Categories:
-                        <select id="category" value="category">
+                        <p class="text-pad">Category:</p>
+                        <select id="category" class="category" value="category">
                             <option value = "">Any Category</option>
                         </select>
                     </label>
                     <label>
-                        Difficulty:
-                        <select id="difficulty">
+                        <p class="text-pad">Difficulty:</p>
+                        <select id="difficulty" class="difficulty">
                             <option value = "">Any Difficulty</option>
                         </select>
                     </label>
             </div>
         
             <div id='submitForm' class="play-game">
-                GAME ON
+                GAME ON!
             </div>
             </form>    
         </main>
