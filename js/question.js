@@ -1,7 +1,6 @@
 'use strict';
 
 const storedQuestions = JSON.parse(localStorage.getItem("questions"))
-console.log(storedQuestions)
 const questionAsked = document.getElementById('question')
 let questionIterator = 0;
 const submitQsButton = document.getElementById('btnSubmit')
@@ -44,6 +43,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 nextQsButton.addEventListener('click', (e)=>{
     e.preventDefault();
     if (questionIterator === storedQuestions.length){
+        localStorage.setItem("correctCounter", JSON.stringify(correctCounter))
+        localStorage.setItem('answerArr', JSON.stringify(answerArr))
+        correctCounter = 0
+        answerArr =[]
         window.location.replace('results.html')
     }
     buttonNeutral();
@@ -69,39 +72,36 @@ nextQsButton.addEventListener('click', (e)=>{
         })
     })
 })();
-let correctCounter = 0
+//I added the arr below to help with the results page
+let answerArr = [];
+let correctCounter = 0;
 submitQsButton.addEventListener('click', (e)=>{
     const resultDisplay = document.getElementById('result')
-    let answer = ""
     if (!answerSelected){
         resultDisplay.innerHTML=('Please select an answer')
     }
     else{
+        //would changing this to an IIFE help?
         const buttonChange = () =>{
             answerButtons.forEach(btn=>{
                 if (btn.classList.contains("selected")){
-                    answer = btn.innerHTML
-                    console.log('clicked')
+                    answerArr[questionIterator] = btn.innerHTML
+                    if (answerArr[questionIterator] === storedQuestions[questionIterator-1].correct_answer){
+                        resultDisplay.innerHTML = "CORRECT!!!"
+                        correctCounter += 1
+                        }
+                    else {
+                        resultDisplay.innerHTML = "INCORRECT!!!"
+                    }
                 }
-                    //btn.innerHTML = 'boom'
-                console.log(storedQuestions[questionIterator-1].correct_answer)
+
                 if (btn.innerHTML === storedQuestions[questionIterator-1].correct_answer){
-                    console.log('yep')
                     btn.classList.toggle('correct')
                 }
                 else {
-                    console.log(btn.innerHTML)
                     btn.classList.toggle('incorrect')
                 }
                 console.log("correct counter", correctCounter)
-                if (answer === storedQuestions[questionIterator-1].correct_answer){
-                    resultDisplay.innerHTML = "CORRECT!!!"
-                    correctCounter += 1
-                    }
-                else {
-                    resultDisplay.innerHTML = "INCORRECT!!!"
-                }
-            
             })
         }
     
@@ -124,4 +124,3 @@ const buttonNeutral = () =>{
     })
     resultDisplay.innerHTML=""
 }
-localStorage.setItem("correctCounter", JSON.stringify(correctCounter))

@@ -1,15 +1,13 @@
 'use strict';
-
-
 let categoryType = 10;
 let questionNumber = 10;
 let questionDifficulty = 'medium';
 let x = 0;
-
 document.addEventListener('DOMContentLoaded', () =>{
     localStorage.removeItem('questions')
     localStorage.removeItem('correctCounter')
     console.log('this works')
+    //console.log("correct counter", correctCounter)
     const getQuestionNum = () => {
         const questionNum = document.getElementById('questionNum')
         for (let i=1; i <16; i++){
@@ -46,11 +44,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
     getCategories()
 })
-
-
-
 const submitButton = document.querySelector('#submitForm')
-
 submitButton.addEventListener('click', e =>{
     const categorySelect = document.getElementById('category')
     const questionDiff = document.getElementById('difficulty')
@@ -59,7 +53,6 @@ submitButton.addEventListener('click', e =>{
     const url = `https://opentdb.com/api.php?amount=${questionNum.value}&category=${categorySelect.value}&difficulty=${questionDiff.value.toLowerCase()}&type=multiple`
     console.log(url)
     get(url).then(questions =>{
-        console.log(questions.results[0].correct_answer)
         questionsArr = questions.results
         console.log(questionsArr)
         x = 1;
