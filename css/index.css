@@ -48,10 +48,23 @@ body {
     text-align: center;
     background-color: #d01798;
 }
-header {
+.header {
     margin: 0 auto;
     text-align: center;
+    
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
 }
+
+.header ul {
+    list-style: none;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -64,6 +77,11 @@ header {
 .footer ul {
     list-style: none;
 }
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .lets-begin, .play-game {
     background-color: #173bd0;
     border-radius: 50px;
