@@ -20,6 +20,7 @@ html {
 .links {
     color: #efefef;
     display: flex;
+    font-weight: 700;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -29,6 +30,7 @@ html {
 .copyright {
     align-self: center;
     font-size: 14px;
+    font-weight: 700;
     color: rgb(0, 0, 0, 0.7); 
     padding: 0;
     margin: 0px;
@@ -43,27 +45,13 @@ html {
     align-items: center;
 }
 body {
-    font-family: 'Noto Sans TC', sans-serif;;
+    font-family: 'Noto Sans TC', sans-serif;
     margin: 0 auto;
     text-align: center;
     background-color: #d01798;
 }
-.header {
-    margin: 0 auto;
-    text-align: center;
-    
-    position: fixed;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-}
 
-.header ul {
-    list-style: none;
-}
+
 
 .footer {
     position: fixed;
@@ -74,6 +62,7 @@ body {
     text-align: center;
     width: 100%;
 }
+
 .footer ul {
     list-style: none;
 }
@@ -86,6 +75,7 @@ body {
     background-color: #173bd0;
     border-radius: 50px;
     font-size: medium;
+    font-weight: 700;
     color: #efefef;
     padding-left: 23px;
     padding-right: 23px;
@@ -124,14 +114,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin: 70px auto;
 }
 
 .selection {
     background-color: #efefef;
     padding: 16px;
     border-radius: 12px;
-    /* width: 80%; */
 }
 
 .selection-menu {
@@ -244,9 +233,9 @@ header {
 }
 
 .gamescreen-wrapper {
-    height: 100%;
+    /* height: 100%; */
     margin-top: 75px;
-    min-height: 80vh;
+    /* min-height: 80vh; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -256,8 +245,16 @@ header {
 
 }
 
+/* display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 70px auto; */
+
 .question {
     background-color: #efefef;
+    font-size: large;
+    font-weight: 700;
     height: 200px;
     margin: 16px 0px;
     max-width: 320px;
@@ -278,10 +275,11 @@ header {
     border: none;
     border-radius: 6px;
     padding: 12px 16px;
-    text-align: left;
+    text-align: center;
     font-size: medium;
     color: #2a2a2d;
     font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 
@@ -319,22 +317,21 @@ header {
 
 
 .selected {
-    border: none;
     background-color: #173bd0;
+    border: 4px solid #173bd0;
     color: #efefef;
 }
 
 .selected:focus {
     outline: none;
+    border: 2px solid #173bd0;
 }
 .correct {
-    border: none;
     background-color: #21c36f;
     color: #efefef;
 
 }
 .incorrect {
-    border: none;
     background-color: #efefef;
     color: #bb1133;
 }
@@ -366,3 +363,9 @@ header {
 
 
 /* RESULTS */
+
+
+
+
+
+
