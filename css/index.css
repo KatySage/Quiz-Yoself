@@ -113,7 +113,7 @@ header {
     background-color: #efefef;
     padding: 16px;
     border-radius: 12px;
-    width: 80%;
+    /* width: 80%; */
 }
 
 .selection-menu {
@@ -332,7 +332,7 @@ header {
     border: none;
     color: #efefef;
     margin: 0 auto;
-    font-size: medium;
+    font-size: large;
 }
 
 .btn-next:hover {
