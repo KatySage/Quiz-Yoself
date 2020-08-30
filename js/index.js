@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     localStorage.removeItem('questions')
     localStorage.removeItem('correctCounter')
     console.log('this works')
+    //console.log("correct counter", correctCounter)
     const getQuestionNum = () => {
         const questionNum = document.getElementById('questionNum')
         for (let i=1; i <16; i++){
