@@ -4,59 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selection Menu</title>
+    <title>Quiz Yo'self</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
     <div class="wrapper">
-        <header>
-            
-        </header>
         <main class="selection-wrapper">
+            <header><img src="images/quizyo-1.png" class="selection-logo"></header>
             <div class="selection">
                 <h1>Selection Menu</h1>
                 <form id="selection-menu" class="selection-menu">
                     <label>
-                        Number of Questions:
+                        <p>Number of Questions:
                         <select id="questionNum"> 
-                            <option required value=""> ## </option>
+                            <option required value="">1-15</option></p>
                         </select>
                     </label>
                     <label>
-                        Categories:
+                        <p>Categories:
                         <select id="category" value="category">
-                            <option value = "">Any Category</option>
+                            <option value = "">Any Category</option></p>
                         </select>
                     </label>
                     <label>
-                        Difficulty:
+                        <p>Difficulty:
                         <select id="difficulty">
-                            <option value = "">Any Difficulty</option>
+                            <option value = "">Any Difficulty</option></p>
                         </select>
                     </label>
             </div>
-        
             <div class="lets-begin" id="lets-begin">
                     <div id='submitForm' class="play-game">GAME ON
                     </div>
             </div>
-                
+            <footer class="footer">
+                <ul class="links">
+                    <!-- <li><a class="active" href="selection.html">Selection</a></li> -->
+                    <!-- <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li> -->
+                </ul>
+                <section class="copyright">
+                    <p>&#169; Yogurt Board</p>
+                </section>
+            </footer> 
         </main>
     </div>
+    
 </body>
-   <footer class="footer">
-        <ul class="links">
-            <li><a class="active" href="selection.html">Selection</a></li>
-            <!-- <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li> -->
-        </ul>
-        <section class="copyright">
-            <p>&#169; Yogurt Board</p>
-        </section>
-    </footer> 
 <script src="js/get.js"></script>
 <script src="js/index.js"></script>    
-
-
 </html>

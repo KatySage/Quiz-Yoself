@@ -1,13 +1,12 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
+
 html {
     font-size: 16px;
     box-sizing: border-box;
 }
-.white {
-    color: #efefef;
-}
+
 .active {
     text-decoration: none;
     color: #efefef;
@@ -33,21 +32,49 @@ html {
     padding: 0;
     margin: 0px;
 }
+
 .main {
     color:#2a2a2d;
     height: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.entry-logo {
+    margin: 20px;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+}
+
+.selection-logo {
+    margin: 20px;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+}
+
 body {
     font-family: 'Noto Sans TC', sans-serif;;
     margin: 0 auto;
     text-align: center;
-    background-color: #d01798;
+    background-image: linear-gradient(145deg, #041B2D, #004E9A, #428CD4, #FF9CDA, #EA4492);
+    background-size: 300%;
+    animation: bg-animation 30s infinite alternate;
 }
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
 header {
     margin: 0 auto;
     text-align: center;
@@ -61,11 +88,13 @@ header {
     text-align: center;
     width: 100%;
 }
+
 .footer ul {
     list-style: none;
 }
+
 .lets-begin, .play-game {
-    background-color: #173bd0;
+    background-color: #428CD4;
     border-radius: 50px;
     font-size: medium;
     color: #efefef;
@@ -74,28 +103,40 @@ header {
     padding: 13px 23px 13px 23px;
     margin: 0 auto;
     text-decoration: none;
+    cursor: pointer;
 }
+
 #lets-begin:visited {
     color: #efefef; 
 }
+
 .selection {
     background-color: #efefef;
-    margin: 0 auto;
+    opacity: .7;
+    margin: 10 auto;
     padding: 16px;
     border-radius: 15px;
+    max-width: 80%;
 }
-.selection-wrapper {
+
+.gamescreen-wrapper {
     height: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
+}
+
+.selection-wrapper{
+    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10 auto;
 }
 .selection-menu {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; 
 }
 .play-game{
     text-align: center;
