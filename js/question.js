@@ -36,7 +36,7 @@ const updateButtons = () => {
 
 document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
-    questionIterator++;
+    questionIterator = 1;
     nextQsButton.style.display = "none"
 })
 
@@ -52,6 +52,9 @@ nextQsButton.addEventListener('click', (e)=>{
     buttonNeutral();
     updateButtons();
     questionIterator++;
+    console.log(questionIterator)
+    console.log(answerArr)
+    console.log(storedQuestions)
     submitQsButton.style.display = "block"
     nextQsButton.style.display = "none"
     answerSelected = false
@@ -85,8 +88,8 @@ submitQsButton.addEventListener('click', (e)=>{
         const buttonChange = () =>{
             answerButtons.forEach(btn=>{
                 if (btn.classList.contains("selected")){
-                    answerArr[questionIterator] = btn.innerHTML
-                    if (answerArr[questionIterator] === storedQuestions[questionIterator-1].correct_answer){
+                    answerArr[questionIterator-1] = btn.innerHTML
+                    if (answerArr[questionIterator-1] === storedQuestions[questionIterator-1].correct_answer){
                         resultDisplay.innerHTML = "CORRECT!!!"
                         correctCounter += 1
                         }
