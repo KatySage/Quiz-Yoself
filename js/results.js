@@ -5,13 +5,12 @@ const displayTable = document.getElementById('fullResults')
 displayTable.style.display = "none"
 console.log(storedCorrect)
 const resultsButton = document.getElementById('moreResults')
-// @ts-ignore
-let storedQuestions = JSON.parse(localStorage.getItem('questions'))
+let somethingElse = JSON.parse(localStorage.getItem('questions'))
 
 const resultDiv = document.getElementById('result')
 const funnyStatement = document.getElementById('funny')
-const y = (storedCorrect/storedQuestions.length)
-resultDiv.innerHTML = (`You got ${storedCorrect} out of ${storedQuestions.length} correct!`)
+const y = (storedCorrect/somethingElse.length)
+resultDiv.innerHTML = (`You got ${storedCorrect} out of ${somethingElse.length} correct!`)
 if ( y < .1) {
     funnyStatement.innerHTML = "You might get better results if you answered randomly."
 } if (y < .3 && y >= .1) {
@@ -31,16 +30,16 @@ if ( y < .1) {
 //fills in the table data from your results
 document.addEventListener('DOMContentLoaded', ()=>{
     const answerArr = JSON.parse(localStorage.getItem("answerArr"))
-    const storedQuestions = JSON.parse(localStorage.getItem('questions'))
+    const somethingElse = JSON.parse(localStorage.getItem('questions'))
     console.log(answerArr)
-    console.log(storedQuestions)
+    console.log(somethingElse)
     answerArr.forEach(function(ans, index) {
         const tableRow = document.createElement('tr')
         displayTable.appendChild(tableRow)
-        if (storedQuestions[index].correct_answer !== answerArr[index]) {
+        if (somethingElse[index].correct_answer !== answerArr[index]) {
             tableRow.classList.toggle('wrong')
         }
-        let dataArray = [storedQuestions[index].question,answerArr[index], storedQuestions[index].correct_answer]
+        let dataArray = [somethingElse[index].question,answerArr[index], somethingElse[index].correct_answer]
         dataArray.forEach(function(item,index){
             const tableData = document.createElement('td')
             tableRow.appendChild(tableData)
