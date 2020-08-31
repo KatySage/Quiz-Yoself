@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
-    
     updateCounter();
 })
 
