@@ -9,11 +9,27 @@ const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
 
+<<<<<<< HEAD
+function qCounter() {
+=======
 function qCounter(storedQuestions, questionIterator) {
+>>>>>>> 69d00fb1e9410855033bb140133b331dd9227481
     const divCounter = document.getElementById('counter');
     const counter = document.createElement('span');
     divCounter.appendChild(counter);
 
+<<<<<<< HEAD
+    while (questionIterator < storedQuestions.length) {
+        counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
+    }
+    while (questionIterator === storedQuestions.length) {
+        counter.innerHTML = "One more to go!";
+    }
+
+}
+
+
+=======
     while (questionIterator < storedQuestions.length()) {
         counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
     }
@@ -25,6 +41,7 @@ function qCounter(storedQuestions, questionIterator) {
 }
 
 console.log(qCounter(8, questionIterator))
+>>>>>>> 69d00fb1e9410855033bb140133b331dd9227481
 
 
 
@@ -61,6 +78,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
+    qCounter();
+    console.log(qCounter(8, questionIterator))
 })
 
 nextQsButton.addEventListener('click', (e)=>{
@@ -75,6 +94,7 @@ nextQsButton.addEventListener('click', (e)=>{
     buttonNeutral();
     updateButtons();
     questionIterator++;
+    qCounter();
     console.log(questionIterator)
     console.log(answerArr)
     console.log(storedQuestions)
