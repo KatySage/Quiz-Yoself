@@ -168,12 +168,11 @@ body {
     margin: 0px auto;
 }
 
-.selection {
-    background-color: rgb(239, 239, 239, .8);
+/* .selection {
+    /* background-color: rgb(239, 239, 239, .8); */
     padding: 4px;
     border-radius: 12px;
-
-}
+}*/
 
 .selection-menu-header {
     color: #041B2D;
