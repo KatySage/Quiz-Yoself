@@ -14,10 +14,10 @@ function qCounter(storedQuestions, questionIterator) {
     const counter = document.createElement('span');
     divCounter.appendChild(counter);
 
-    while (questionIterator < storedQuestions.length()) {
+    while (questionIterator < storedQuestions.length) {
         counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
     }
-    while (questionIterator === storedQuestions.length()) {
+    while (questionIterator === storedQuestions.length) {
         counter.innerHTML = "One more to go!"
     }
 
