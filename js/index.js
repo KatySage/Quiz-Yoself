@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', () =>{
     getFifteen()
 })
 const form = document.getElementById('selection-menu')
+form.addEventListener('change',event=>{
+    event.preventDefault()
+    if (event.target.id === 'questionNum' && document.querySelectorAll('.required').length > 0){
+        document.getElementById('required').remove()
+        
+    }
+})
 form.addEventListener('change', event => {
     event.preventDefault()
     if (event.target.id !== 'questionNum') {
@@ -56,14 +63,14 @@ form.addEventListener('change', event => {
         const url = `https://opentdb.com/api_count.php?category=${categorySelect.value}`
         const questionNum = document.getElementById('questionNum')
         console.log(url)
-        questionNum.innerHTML=""
+        questionNum.innerHTML="Select number"
 
         let maxTotal = 0;
         get(url).then(function(categoryQCount){
             // const arr = categoryQCount.category_question_count
             if (questionDiff.value === ""){
                 maxTotal = categoryQCount.category_question_count.total_question_count
-                if(maxTotal>=16){maxTotal = 16}
+                if(maxTotal>=16){maxTotal = 15}
                 for (let i=1; i <= maxTotal; i++){
                     const numOption = document.createElement('option')
                     numOption.value = i.toString();
@@ -72,7 +79,7 @@ form.addEventListener('change', event => {
                 }
             } else {      
                 maxTotal = categoryQCount.category_question_count[`total_${questionDiff.value.toLowerCase()}_question_count`]
-                if(maxTotal>=16){maxTotal = 16}
+                if(maxTotal>=16){maxTotal = 15}
                 for (let i=1; i <= maxTotal; i++){
                     const numOption = document.createElement('option')
                     numOption.value = i.toString();
@@ -94,13 +101,24 @@ submitButton.addEventListener('click', e =>{
     const questionDiff = document.getElementById('difficulty')
     const questionNum = document.getElementById('questionNum')
     let questionsArr = [];
-    const url = `https://opentdb.com/api.php?amount=${questionNum.value}&category=${categorySelect.value}&difficulty=${questionDiff.value.toLowerCase()}&type=multiple`
-    console.log(url)
-    get(url).then(questions =>{
-        questionsArr = questions.results
-        console.log(questionsArr)
-        console.log('after')
-        localStorage.setItem("questions", JSON.stringify(questionsArr))
-        window.location.replace('gamescreen.html')
-    })
+    console.log(questionNum.value)
+    if (questionNum.value === ""){
+        const errorMessage = document.createElement('p')
+        const numQuestions = document.getElementById('numQuestions')
+        numQuestions.appendChild(errorMessage)
+        errorMessage.innerHTML = '*requred'
+        errorMessage.classList.toggle('required')
+        errorMessage.id = 'required'
+    }
+    else{
+        const url = `https://opentdb.com/api.php?amount=${questionNum.value}&category=${categorySelect.value}&difficulty=${questionDiff.value.toLowerCase()}&type=multiple`
+        console.log(url)
+        get(url).then(questions =>{
+            questionsArr = questions.results
+            console.log(questionsArr)
+            console.log('after')
+            localStorage.setItem("questions", JSON.stringify(questionsArr))
+            window.location.replace('gamescreen.html')
+        })
+    }
 });
