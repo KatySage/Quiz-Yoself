@@ -163,6 +163,7 @@ label {
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
+    
 }
 
 .text-pad {
@@ -198,7 +199,8 @@ label {
 }
 
 select {
-    font: 400 12px/1.3 sans-serif;
+    font: 400 12px/1.3;
+    cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
     color: var(--baseFg);
@@ -282,20 +284,23 @@ margin: 70px auto; */
     font-size: large;
     font-weight: 700;
     height: 200px;
-    margin: 16px 0px;
+    margin: 0 auto;
     max-width: 320px;
     border: none;
     border-radius: 12px;
     padding: 30px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
     width: 100%;
-
+    /* text-align: left;
+    display: inline-block;
+    vertical-align: middle; */
+    
 
 }
 
+
+
 .btn {
+    cursor: pointer;
     width: 100%;
     max-width: 320px;
     border: none;
@@ -326,6 +331,7 @@ margin: 70px auto; */
     background-color: #21c36f;
     border: none;
     border-radius: 50px;
+    cursor: pointer;
     font-size: medium;
     color: #efefef;
     padding-left: 23px;
@@ -369,22 +375,34 @@ margin: 70px auto; */
 }
 
 .btn-next {
-    background-color: #d01798;
     border: none;
+     
+ 
+   
+
+    background-color: #428CD4;
+    border-radius: 50px;
+    font-size: medium;
+    font-weight: 700;
     color: #efefef;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding: 13px 23px 13px 23px;
     margin: 0 auto;
-    font-size: large;
+    text-decoration: none;
+    cursor: pointer;
+    width: 150px;
 }
 
-.btn-next:hover {
-    color: rgba(255, 255, 255, .7);
-}
+/* .btn-next:hover {
+    color: rgba(255, 255, 255, .8);
+} */
 
-.btn-next:focus {
+/* .btn-next:focus {
     background-color: #d01798;
     color: #d01798;
     outline: none;
-}
+} */
 
 
 
@@ -418,6 +436,7 @@ margin: 70px auto; */
 }
 .more-results {
     background-color: rgb(38, 74, 114);
+    border: none;
     border-radius: 50px;
     font-size: medium;
     font-weight: 700;
@@ -429,6 +448,9 @@ margin: 70px auto; */
     text-decoration: none;
     cursor: pointer;
     width: 150px;
+}
+.more-results:focus {
+    outline: none;
 }
 
 
