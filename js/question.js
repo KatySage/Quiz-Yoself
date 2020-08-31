@@ -9,11 +9,16 @@ const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
 
+<<<<<<< HEAD
 function qCounter() {
+=======
+function qCounter(storedQuestions, questionIterator) {
+>>>>>>> 69d00fb1e9410855033bb140133b331dd9227481
     const divCounter = document.getElementById('counter');
     const counter = document.createElement('span');
     divCounter.appendChild(counter);
 
+<<<<<<< HEAD
     while (questionIterator < storedQuestions.length) {
         counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
     }
@@ -24,6 +29,19 @@ function qCounter() {
 }
 
 
+=======
+    while (questionIterator < storedQuestions.length()) {
+        counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
+    }
+    while (questionIterator === storedQuestions.length()) {
+        counter.innerHTML = "One more to go!"
+    }
+
+
+}
+
+console.log(qCounter(8, questionIterator))
+>>>>>>> 69d00fb1e9410855033bb140133b331dd9227481
 
 
 
