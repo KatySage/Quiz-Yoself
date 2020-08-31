@@ -9,9 +9,10 @@ const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
 const updateCounter = () => {
-    const counterDiv = document.getElementById('counter')
-    const counterSpan = document.getElementById('counterSpan')
-    counterSpan.innerHTML  = `${questionIterator}/${storedQuestions.length}`
+    const counterDiv = document.getElementById('counter');
+    const counterSpan = document.getElementById('counterSpan');
+    counterSpan.classList = ("counterSpan");
+    counterSpan.innerHTML  = `Question ${questionIterator}/${storedQuestions.length}`;
     }
 
 const updateButtons = () => {
