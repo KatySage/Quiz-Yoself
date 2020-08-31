@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body class="body-results">
     <header>
         <h1>Results</h1>
     </header>
     <main>
-        <header>
-            <h2>Did you Crush it?</h2>
-            <p>funny phrase regarding the results</p>
-        </header>
+    <header>
+        <div>
+                <p class="result"><h2 id="result">Result</h2></p>
+            <p id="funny">funny phrase regarding the results</p>
+    </header>
         <section>
-            <div>
-                <p class="result" id="result">Result</p>
-            </div>
-            <button id="moreResults">Details</button>
-            <div>
-                <table class="full-results" id="fullResults"> 
+            <button class="more-results" id="moreResults">Details</button>
+            <br>
+            <div  class="full-results">
+                <table id="fullResults"> 
                     <tr>
                         <th>Question</th>
                         <th>Your Answer</th>
-                        <th>Correct Answer<th>
+                        <th>Correct Answer</th>
                     </tr> 
                 </table>
             </div>
@@ -47,7 +47,5 @@
         </section>
     </footer>
 </body>
-
-<script src="js/get.js"></script>
 <script src="js/results.js"></script>
 </html>
