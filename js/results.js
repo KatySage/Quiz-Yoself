@@ -15,10 +15,12 @@ const buildFullResults = () => {
     const storedQuestions = JSON.parse(localStorage.getItem('questions'))
     displayTable.display = "block"
     console.log(answerArr)
-    for (let j = 0; j < answerArr.length; j ++){
+    for (let j = 0; j < answerArr.length; j++){
         const tableRow = document.createElement('tr')
         displayTable.appendChild(tableRow)
-        let dataArray = [storedQuestions[j].question,answerArr[j+1], storedQuestions[j].correct_answer]
+        console.log(storedQuestions)
+        let dataArray = [storedQuestions[j+1].question,answerArr[j+1], storedQuestions[j+1].correct_answer]
+        console.log(dataArray)
         for (let i = 0; i < 3; i++){
             const tableData = document.createElement('td')
             tableRow.appendChild(tableData)
