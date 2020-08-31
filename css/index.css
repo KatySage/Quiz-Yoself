@@ -62,6 +62,13 @@ html {
     height: auto;
 }
 
+.gamescreen-logo {
+    margin: 16px;
+    width: 20%;
+    max-width: 500px;
+    height: auto;
+}
+
 body {
     font-family: 'Noto Sans TC', sans-serif;
     margin: 0 auto;
@@ -117,7 +124,7 @@ body {
 .play-game {
     text-align: center;
     text-decoration: none;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 #lets-begin:visited {
@@ -244,13 +251,13 @@ select {
   }
 
 
-
+/* 
 .play-game {
     text-align: center;
     text-decoration: none;
     margin-top:80px;
 }
-
+ */
 
 
 /* GAME SCREEN */
