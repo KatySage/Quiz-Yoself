@@ -8,7 +8,11 @@ const nextQsButton = document.getElementById('btnNext')
 const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
-
+const updateCounter = () => {
+    const counterDiv = document.getElementById('counter')
+    const counterSpan = document.getElementById('counterSpan')
+    counterSpan.innerHTML  = `${questionIterator}/${storedQuestions.length}`
+    }
 
 const updateButtons = () => {
     const answerButtons = document.querySelectorAll('#btn')
@@ -39,6 +43,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
+    
+    updateCounter();
 })
 
 nextQsButton.addEventListener('click', (e)=>{
@@ -53,6 +59,7 @@ nextQsButton.addEventListener('click', (e)=>{
     buttonNeutral();
     updateButtons();
     questionIterator++;
+    updateCounter();
     console.log(questionIterator)
     console.log(answerArr)
     console.log(storedQuestions)
