@@ -18,18 +18,18 @@ html {
     background-color: #efefef;
     color: #d01798;
     margin: 0 auto;
-    text-align: center;
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
     width: 100%;
+    height: 3rem;
 }
 
-.header ul {
-    list-style: none;
+.links {
+ padding-right: 1rem;
 }
 
 .footer-our-team {

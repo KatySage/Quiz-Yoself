@@ -12,6 +12,7 @@ let answerSelected = false;
 
 const updateButtons = () => {
     const answerButtons = document.querySelectorAll('#btn')
+    console.log(storedQuestions)
     questionAsked.innerHTML= (storedQuestions[questionIterator].question)
 
     function getRandomInt(max) {

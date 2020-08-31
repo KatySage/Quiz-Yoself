@@ -1,5 +1,4 @@
-
-
+'use strict';
 function get(url){
     //fetch the data
     return fetch(url)
