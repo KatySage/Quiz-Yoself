@@ -106,7 +106,7 @@ submitButton.addEventListener('click', e =>{
         const errorMessage = document.createElement('p')
         const numQuestions = document.getElementById('numQuestions')
         numQuestions.appendChild(errorMessage)
-        errorMessage.innerHTML = '*requred'
+        errorMessage.innerHTML = '*required'
         errorMessage.classList.toggle('required')
         errorMessage.id = 'required'
     }
