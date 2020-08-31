@@ -61,14 +61,15 @@ html {
 
 .entry-logo {
     margin: 20px;
-    width: 80%;
+    width: 98%;
     max-width: 500px;
     height: auto;
 }
 
 .selection-logo {
-    margin: 16px;
-    width: 50%;
+    margin: 0 auto;
+    padding: 8px;
+    width: 98%;
     max-width: 500px;
     height: auto;
 }
@@ -137,6 +138,7 @@ body {
     font-size: medium;
     font-weight: 700;
     color: #efefef;
+    border: 1px solid white;
     padding: 12px 22px 12px 22px;
     margin: 0 auto;
     text-decoration: none;
@@ -173,11 +175,22 @@ body {
     margin: 0px auto;
 }
 
+<<<<<<< HEAD
 /* .selection {
     background-color: rgb(239, 239, 239, .8);
     padding: 4px;
     border-radius: 12px;
 } */
+=======
+.selection {
+    /* background-color: #efefef; */
+    margin-bottom: 32px;
+    /* border-radius: 12px;
+    opacity: 0.75; */
+
+}
+
+>>>>>>> ac848e1c2df7ea1c3c069fcfae83f8c818a36650
 
 .selection-menu-header {
     color: #041B2D;
@@ -255,24 +268,24 @@ select {
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
     background-position: right 20px center, right bottom, right bottom, right bottom;   
-  }
-  
-  select:hover {
+    }
+
+    select:hover {
     background-image: linear-gradient(var(--accentFg), var(--accentFg)),
-      linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
-      linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
-      linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
-  }
-  
-  select:active {
+        linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+    }
+
+    select:active {
     background-image: linear-gradient(var(--accentFg), var(--accentFg)),
-      linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
-      linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
-      linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+        linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+        linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
     color: var(--accentBg);
     border-color: var(--accentFg);
     background-color: var(--accentFg);
-  }
+    }
 
 
 /* 
@@ -288,8 +301,9 @@ select {
 header {
     color: #efefef;
     text-decoration: none;
-    /* padding-top: 20px; */
+    padding-top: 8px;
 }
+
 
 .gamescreen-wrapper {
     height: 100%;
@@ -429,7 +443,7 @@ margin: 70px auto; */
 
 /* RESULTS */
 .body-results{
-    background: 	rgb(79, 141, 212);
+    background: rgb(79, 141, 212);
 }
 .full-results{
     border-collapse: collapse;
@@ -437,6 +451,7 @@ margin: 70px auto; */
     width:70%; 
     margin-left:15%; 
     margin-right:15%;
+    max-height: 20%;
     
 }
 .full-results td, .full-results th {
