@@ -8,29 +8,11 @@ const nextQsButton = document.getElementById('btnNext')
 const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
-
-function qCounter(storedQuestions, questionIterator) {
-    const divCounter = document.getElementById('counter');
-    const counter = document.createElement('span');
-    divCounter.appendChild(counter);
-
-    while (questionIterator < storedQuestions.length()) {
-        counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
+const updateCounter = () => {
+    const counterDiv = document.getElementById('counter')
+    const counterSpan = document.getElementById('counterSpan')
+    counterSpan.innerHTML  = `${questionIterator}/${storedQuestions.length}`
     }
-    while (questionIterator === storedQuestions.length()) {
-        counter.innerHTML = "One more to go!"
-    }
-
-
-}
-
-console.log(qCounter(8, questionIterator))
-
-
-
-
-
-
 
 const updateButtons = () => {
     const answerButtons = document.querySelectorAll('#btn')
@@ -61,6 +43,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
+    updateCounter();
 })
 
 nextQsButton.addEventListener('click', (e)=>{
@@ -75,6 +58,7 @@ nextQsButton.addEventListener('click', (e)=>{
     buttonNeutral();
     updateButtons();
     questionIterator++;
+    updateCounter();
     console.log(questionIterator)
     console.log(answerArr)
     console.log(storedQuestions)

@@ -29,7 +29,6 @@ html {
     color: #efefef
 }
 
-
 .links {
     color: #efefef;
     display: flex;
@@ -76,7 +75,14 @@ html {
 
 .gamescreen-logo {
     margin: 0px;
-    width: 20%;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+}
+
+.results-logo {
+    margin: 0px;
+    width: 40%;
     max-width: 500px;
     height: auto;
 }
@@ -240,9 +246,9 @@ select {
     border-radius: var(--radius);
     background-color: var(--baseBg);
     background-image: linear-gradient(var(--baseFg), var(--baseFg)),
-      linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
-      linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
-      linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+        linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+        linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
     background-position: right 20px center, right bottom, right bottom, right bottom;   
@@ -284,7 +290,7 @@ header {
 
 .gamescreen-wrapper {
     height: 100%;
-    margin-top: 75px;
+    /* margin-top: 75px; */
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -315,12 +321,8 @@ margin: 70px auto; */
     opacity: 0.75;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
 }
-
-
-
 
 .btn {
     cursor: pointer;
@@ -335,12 +337,7 @@ margin: 70px auto; */
     font-weight: 500;
     font-family: 'Noto Sans TC', sans-serif;
     opacity: 0.75;
-
 }
-
-
-
-
 
 .btn-submit {
 /*   
@@ -370,10 +367,6 @@ margin: 70px auto; */
 .btn-submit:focus {
     outline: none;
 }
-
-
-
-
 
 .selected:focus {
     outline: none;
@@ -463,7 +456,7 @@ margin: 70px auto; */
     background-color: rgb(233, 31, 176);
 }
 .more-results {
-    background-color: #004E9A;
+    background-color: #EA4492;
     border: none;
     border-radius: 50px;
     font-size: medium;
@@ -476,10 +469,6 @@ margin: 70px auto; */
     text-decoration: none;
     cursor: pointer;
     width: 150px;
-
-}
-.more-results:focus {
-    outline: none;
 }
 
 .play-again {
@@ -497,6 +486,12 @@ margin: 70px auto; */
     cursor: pointer;
     width: 150px;
 }
+
+.more-results:focus {
+    outline: none;
+}
+
+
 
 .play-again:focus {
     outline: none;
