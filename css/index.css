@@ -373,22 +373,13 @@ margin: 70px auto; */
 
 
 
-.selected {
-    background-color: #808080;
-    border: 4px solid #808080;
-    color: #efefef;
-}
+
 
 .selected:focus {
     outline: none;
     border: 2px solid #808080;
 }
-.correct {
-    background-color: #21c36f;
-    border: #21c36f;
-    color: #efefef;
 
-}
 .incorrect {
     background-color: #efefef;
     color: #FF0000;
@@ -400,9 +391,23 @@ margin: 70px auto; */
     padding-top: 0px;
 }
 
+.selected {
+    background-color: #808080;
+    /* border: 4px solid #808080; */
+    color: #efefef;
+}
+
+.correct {
+    background-color: #21c36f;
+    border: #21c36f;
+    color: #efefef;
+}
+.selected.incorrect {
+    color: #FF0000;
+}
+
 .btn-next {
     border: none;
-
     background-color: #428CD4;
     border-radius: 50px;
     font-size: medium;
