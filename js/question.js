@@ -9,6 +9,28 @@ const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
 
 
+function qCounter(storedQuestions, questionIterator) {
+    const divCounter = document.getElementById('counter');
+    const counter = document.createElement('span');
+    divCounter.appendChild(counter);
+
+    while (questionIterator < storedQuestions.length()) {
+        counter.innerHTML = `${questionIterator}/${storedQuestions.length}`;
+    }
+    while (questionIterator === storedQuestions.length()) {
+        counter.innerHTML = "One more to go!"
+    }
+
+
+}
+
+console.log(qCounter(8, questionIterator))
+
+
+
+
+
+
 
 const updateButtons = () => {
     const answerButtons = document.querySelectorAll('#btn')
