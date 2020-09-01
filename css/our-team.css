@@ -146,9 +146,14 @@ h1 {
 }
 
 .github {
-    color: #428CD4;
+    color: #004E9A;
+    
     font-weight: 700;
     font-size: large;
+}
+.github:hover {
+    color: #428CD4;
+    transition: .3s;
 }
 
 .github:visited {
@@ -203,7 +208,8 @@ a {
 } */
 
 .footer-our-team {
-    background-color: #efefef;
+    background-color: #428CD4;
+    color: #efefef;
     margin: 0 auto;
     /* position: fixed; */
     bottom: 0;
@@ -213,7 +219,10 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height:56px;
+}
+
+.copyright {
+    padding: 0px;
 }
 
 
