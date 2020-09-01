@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 //toggles the table
 const myFunction = () => {
         if (displayTable.style.display == "none") {
-            displayTable.style.display = "table";
+            displayTable.style.display = "inline";
         } else {
             displayTable.style.display = "none";
         }

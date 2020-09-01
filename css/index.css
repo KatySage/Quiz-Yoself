@@ -640,3 +640,9 @@ margin: 70px auto; */
     }
 }
 
+@media screen and (min-height: 750px){
+    .footer.extra_detail{
+        position: fixed;
+    }
+}
+

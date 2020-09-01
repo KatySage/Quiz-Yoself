@@ -40,11 +40,25 @@ const updateButtons = () => {
 };
 
 
+
+
+function play() {
+    const myMusic= document.getElementById("music");
+    myMusic.play();
+}
+
+function pause() {
+    const myMusic= document.getElementById("music");
+    myMusic.pause();
+}
+
+
 document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
     updateCounter();
+    play()
 })
 
 nextQsButton.addEventListener('click', (e)=>{
