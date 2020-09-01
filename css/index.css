@@ -586,23 +586,21 @@ margin: 70px auto; */
     color: #efefef;
     padding-left: 23px;
     padding-right: 23px;
-    padding: 17px 23px 17px 23px;
+    padding: 13px 30px 13px 30px;
     margin: 10px auto;
     text-decoration: none;
     cursor: pointer;
     width: 150px;
-    /* border: 1px solid white; */
+    border: 1px solid white;
 }
 
 .play-again{
     background-color: #EA4492;
-    border: none;
+    border: 1px solid white;
     border-radius: 50px;
     font-size: medium;
     font-weight: 700;
     color: #efefef;
-    /* padding-left: 23px;
-    padding-right: 23px; */
     padding: 13px 30px 13px 30px;
     margin: 10px auto;
     text-decoration: none;
