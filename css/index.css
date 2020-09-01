@@ -508,7 +508,7 @@ margin: 70px auto; */
 
 .btn-next:hover:after {
     opacity: 1;
-    right: 46px;
+    right: 36px;
 }
 .counterSpan {
     color: #efefef;

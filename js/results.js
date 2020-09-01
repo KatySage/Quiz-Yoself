@@ -12,9 +12,9 @@ const resultDiv = document.getElementById('result')
 const funnyStatement = document.getElementById('funny')
 const y = (storedCorrect/somethingElse.length)
 
-const clickSound= document.getElementById("click");
+const clickSound2= document.getElementById("click");
 function playClick() {
-    clickSound.play();
+    clickSound2.play();
 }
 const appSound= document.getElementById("applause");
 function appPlay() {
@@ -30,10 +30,10 @@ function booPlay() {
 function booStop() {
     booSound.pause();
 }
-const myMusic= document.getElementById("music");
-function play() {
-    myMusic.play();
-}
+// const myMusic= document.getElementById("music");
+// function play() {
+//     myMusic.play();
+// }
 
 function pause() {
     myMusic.pause();
@@ -54,7 +54,7 @@ function pause() {
         funnyStatement.innerHTML = "You got exactly half of these correct! You get half a pony! You pick which half." 
         appPlay()
     } if (y > .5 && y <=.75) {
-        funnyStatement.innerHTML = "You're doing amazing! Your brain must be really wrinkly!"
+        funnyStatement.innerHTML = "You're doing an amazing job! Your brain must be really wrinkly!"
         appPlay()
         } 
     if (y > .75 && y <= 1) {
