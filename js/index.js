@@ -19,9 +19,6 @@ function toggle() {
     }
 }
 
-function pause() {
-    myMusic.pause();
-}
 const clickSound= document.getElementById("click");
 function playClick() {
     clickSound.play();
