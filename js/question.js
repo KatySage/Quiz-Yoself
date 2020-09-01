@@ -39,7 +39,24 @@ const updateButtons = () => {
     }
     setButtonVal()
 };
-
+const clickSound= document.getElementById("click");
+function playClick() {
+    clickSound.play();
+}
+const appSound= document.getElementById("applause");
+function appPlay() {
+    appSound.play();
+}
+function appStop() {
+    appSound.pause();
+}
+const booSound= document.getElementById("boos");
+function booPlay() {
+    booSound.play();
+}
+function booStop() {
+    booSound.pause();
+}
 const myMusic= document.getElementById("music");
 function play() {
     myMusic.play();
@@ -56,8 +73,6 @@ myMusic.autoplay = true;
         console.log(myMusic.autoplay)
     }
 
-
-
 document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
@@ -73,24 +88,24 @@ nextQsButton.addEventListener('click', (e)=>{
         localStorage.setItem('answerArr', JSON.stringify(answerArr))
         correctCounter = 0
         answerArr =[]
-        window.location.replace('results.html')
+        playClick()
+        let nextPage = setTimeout(function(){window.location.replace('results.html')},1000)
     }
+    else{playClick()
     buttonNeutral();
     updateButtons();
     questionIterator++;
     updateCounter();
-    console.log(questionIterator)
-    console.log(answerArr)
-    console.log(storedQuestions)
     submitQsButton.style.display = "block"
     nextQsButton.style.display = "none"
-    answerSelected = false
+    answerSelected = false}
 });
 
 
 (function (){
     answerButtons.forEach(btn=>{
         btn.addEventListener('click', e=>{
+            playClick()
             const removeAll = () =>{
                 answerButtons.forEach(button =>{
                     button.classList.remove('selected')
@@ -107,7 +122,7 @@ let answerArr = [];
 let correctCounter = 0;
 submitQsButton.addEventListener('click', (e)=>{
     const resultDisplay = document.getElementById('result')
-    
+    playClick()
     if (!answerSelected){
         resultDisplay.classList.toggle('on')
         resultDisplay.innerHTML=('Please select an answer')
@@ -125,12 +140,12 @@ submitQsButton.addEventListener('click', (e)=>{
                     answerArr[questionIterator-1] = btn.innerHTML
                     if (answerArr[questionIterator-1] === storedQuestions[questionIterator-1].correct_answer){
                         resultDisplay.innerHTML = "CORRECT!!!"
-                        //resultDisplay.classList.toggle('correct')
+                        appPlay();
                         correctCounter += 1
                         }
                     else {
                         resultDisplay.innerHTML = "INCORRECT!!!"
-                        //resultDisplay.classList.toggle('incorrect')
+                        booPlay();
                     }
                 }
 
@@ -162,4 +177,6 @@ const buttonNeutral = () =>{
         btn.classList.remove('selected')
     })
     resultDisplay.classList.toggle('on')
+    appStop()
+    booStop()
 }
