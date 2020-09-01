@@ -5,11 +5,28 @@
 html {
     font-size: 16px;
     box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 /* OUR TEAM */
 
-.creators-wrapper {
+.ourteam-logo {
+    width: 50%;
+    max-width: 200px;
+    height: auto;
+}
+
+.creator-pic {
+    border-radius: 50%;
+    width: 30%;
+    height: auto;
+}
+
+h1 {
+    align-self: center;
+}
+
+.creators-wrapper { 
     color: #464345;
     display: grid;
     width: 100%;
@@ -96,4 +113,4 @@ h1{
 
 .footer-our-team ul {
     list-style: none;
-}
+} 
