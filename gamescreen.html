@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/index.css">
     </head>
-    <body>
+    <body class="gamescreen-body">
         <header class="header">
             <a class="active" href="selection.html">Back to Selection &#10558;</a>
         </header>
@@ -17,14 +17,16 @@
                 <img src="images/quizyo-1.png" class="gamescreen-logo">
             </p>
             <div id="counter">
-                <span id="counterSpan"></span>
-            </div>
-            <div id="counter">
+                <div id="counterSpan"></div>
             </div>
             <div class="question" id="question">
                 <span class="span">Question goes here?</span>
             </div>
             
+            <div class="result" id="result">
+                <p></p>
+            </div>
+
             <div class="answers" id="answers">
 
                 <p><button type="button" class="btn answer" id="btn">Answer 1</button></p>
@@ -38,29 +40,12 @@
                 <button type="button" class="btn-submit" id="btnSubmit">CHECK</button>
             </div>
             
-            <div class="result" id="result">
-                <p></p>
-            </div>
+            
 
             <div class="next" id="next">
                 <p><button type="button" class="btn-next" id="btnNext">Next</button></p>
             </div>
         </div>
-
-                <footer class="footer">
-                    
-                    <ul class="links">
-                        <!-- <li><a class="active" href="entry.html">Home</a></li> -->
-                        <!-- <li><a class="active" href="creators.html">Our Team</a></li> -->
-                        <!-- <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li> -->
-                    </ul> 
-                    <!-- <section class="copyright">
-                        <p>&#169; Yogurt Board</p>
-                    </section>  -->
-                </footer> 
-            </main>
-        </div>
-    </body>
     <script src="js/question.js"></script>
     </body>
 </html>

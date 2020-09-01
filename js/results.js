@@ -31,11 +31,12 @@ if ( y < .1) {
 document.addEventListener('DOMContentLoaded', ()=>{
     const answerArr = JSON.parse(localStorage.getItem("answerArr"))
     const somethingElse = JSON.parse(localStorage.getItem('questions'))
+    const tableBody = document.getElementById('tableBody')
     console.log(answerArr)
     console.log(somethingElse)
     answerArr.forEach(function(ans, index) {
         const tableRow = document.createElement('tr')
-        displayTable.appendChild(tableRow)
+        tableBody.appendChild(tableRow)
         if (somethingElse[index].correct_answer !== answerArr[index]) {
             tableRow.classList.toggle('wrong')
         }
@@ -43,14 +44,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
         dataArray.forEach(function(item,index){
             const tableData = document.createElement('td')
             tableRow.appendChild(tableData)
-            tableData.innerHTML = dataArray[index]   
+            tableData.innerHTML = dataArray[index]
+            if (index === 0){
+                tableData.classList.toggle('questionColumn')
+            }   
             })
         });
     })
 //toggles the table
 const myFunction = () => {
         if (displayTable.style.display == "none") {
-            displayTable.style.display = "block";
+            displayTable.style.display = "table";
         } else {
             displayTable.style.display = "none";
         }
@@ -59,5 +63,7 @@ const myFunction = () => {
 resultsButton.addEventListener('click', e=>{
     e.preventDefault()
     myFunction()
+    const footerStyle = document.getElementById('footer')
+    footerStyle.classList.toggle('extra_detail')
 })
 

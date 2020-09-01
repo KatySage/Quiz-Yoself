@@ -10,48 +10,53 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="body-results">
-    <header>
-        <p>
-            <img src="images/quizyo-1.png" class="results-logo">
-        </p> 
-        <h1>Results</h1>
+   
+    <main class='result-main'> 
+        <header class="result-header">
+            <p>
+                <img src="images/quizyo-1.png" class="results-logo">
+            </p> 
+            <h1 class="result-header">Results</h1>
         
-    </header>
-    <main>
-        <header>
-            <div>
-                    <p class="result"><h2 id="result">Result</h2></p>
-                <p id="funny">funny phrase regarding the results</p>
         </header>
         <section id="resultsDisplay" class="results-display">
-                <p>
+            <h2 class="result-header"   id="result">
+                Result
+            </h2>
+            <p id="funny">
+                funny phrase regarding the results
+            </p>
+            <p>
                 <a class="active play-again" href="selection.html">Play again?</a>
-                </p>
-                <p>
-                    <button class="more-results" id="moreResults">Details</button>
-                </p>
-                <div  class="full-results">
-                    <table id="fullResults"> 
-                        <tr>
-                            <th>Question</th>
-                            <th>Your Answer</th>
-                            <th>Correct Answer</th>
-                        </tr> 
-                    </table>
-                </div>
+            </p>
+            <p class="more-results" id="moreResults">
+                <a>Details</a>
+            </p>
+            <div class="full-results">
+                <table id="fullResults" class='results-table'> 
+                    <thead>
+                        <th>Question</th>
+                        <th>Your Answer</th>
+                        <th>Correct Answer</th>
+                    </thead>
+                    <tbody id='tableBody'>
+                        
+                    </tbody> 
+                </table>
+            </div>
         </section>
-            
+        <div class="footer" id='footer'>
+            <ul class="links">
+                <li><a class="active" href="entry.html">Home</a></li>
+                <li><a class="active" href="creators.html">Our Team</a></li>
+                <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li>
+            </ul>
+            <section class="copyright">
+                <p>&#169; Yogurt Board</p>
+            </section>
+        </div>    
         </main>
-    <footer class="footer">
-        <ul class="links">
-            <li><a class="active" href="entry.html">Home</a></li>
-            <li><a class="active" href="creators.html">Our Team</a></li>
-            <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li>
-        </ul>
-        <section class="copyright">
-            <p>&#169; Yogurt Board</p>
-        </section>
-    </footer>
+    
 </body>
 <script src="js/results.js"></script>
 </html>
