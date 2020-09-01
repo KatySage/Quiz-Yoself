@@ -60,7 +60,7 @@ html {
 }
 
 .entry-logo {
-    /* margin: 20px; */
+    margin: 20px;
     width: 98%;
     max-width: 500px;
     height: auto;
@@ -87,7 +87,6 @@ html {
     max-width: 500px;
     height: auto;
     flex-grow: 3;
-
 }
 
 .header {
