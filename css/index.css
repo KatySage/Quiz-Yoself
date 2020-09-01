@@ -296,24 +296,26 @@ select {
     margin: 0px;
 }
 
-    @media screen and (max-height: 600px){
-        select {
-
-            padding: 0.4em 1.4em 0.4em 0.4em;}
+    @media screen and (max-height: 601px){
     .selection {
-        margin-bottom: 2px;}
+        margin-bottom: 0px;}
     .text-pad {
-            margin-top: 2px;
+            margin-top: 0px;
             /* margin-bottom: px; */
         }
+    #toggle{
+            width: 16%;
+            height: auto;
+            margin: 0px;
+        }
+    .play-game {
+            padding: 10px 16px 10px 16px;
+            margin: 0 auto;
+            text-decoration: none;
+            cursor: pointer;
+            width: 150px;
+        }
     }
-/* 
-.play-game {
-    text-align: center;
-    text-decoration: none;
-    margin-top:80px;
-}
- */
 
 
 /* GAME SCREEN */
