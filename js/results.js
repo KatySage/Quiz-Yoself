@@ -10,24 +10,6 @@ let somethingElse = JSON.parse(localStorage.getItem('questions'))
 const resultDiv = document.getElementById('result')
 const funnyStatement = document.getElementById('funny')
 const y = (storedCorrect/somethingElse.length)
-<<<<<<< HEAD
-resultDiv.innerHTML = (`You got ${storedCorrect} out of ${somethingElse.length} correct!`)
-if ( y < .1) {
-    funnyStatement.innerHTML = "You might get better results if you answered randomly."
-} if (y < .3 && y >= .1) {
-    funnyStatement.innerHTML = "Not too shabby! These are really difficult."
-} if (y < .5 && y >= .3) {
-    funnyStatement.innerHTML = "That's pretty good! You must have heard of this topic before."   
-} if (y == .5) {
-    funnyStatement.innerHTML = "You got exactly half of these correct! You get half a pony! You pick which half." 
-} if (y > .5 && y <=.75) {
-        funnyStatement.innerHTML = "You're doing an amazing job! Your brain must be really wrinkly!"
-    } if (y > .75 && y <= 1) {
-    funnyStatement.innerHTML = "That's incredible! You're practically a walking encyclopedia!"
-} if (y == 1) {
-    funnyStatement.innerHTML = "You got EVERY question correct! That's incredible!"}
-=======
->>>>>>> d0a0539021a7a56d313ef459aa72db948f642d28
 
 const myMusic= document.getElementById("music");
 function play() {
