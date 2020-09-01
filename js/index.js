@@ -6,8 +6,17 @@ const token = JSON.parse(localStorage.getItem('token'))
 const myMusic= document.getElementById("music");
 
 
-function play() {
-    myMusic.play();
+function toggle() {
+    const image = document.getElementById("toggle");
+    if (image.className === "play") {
+        image.className = "pause"
+        image.src = "images/play.png";
+        myMusic.pause();
+    } else {
+        image.className = "play"
+        image.src = "images/pause.png";
+        myMusic.play();
+    }
 }
 
 function pause() {
