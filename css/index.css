@@ -60,7 +60,7 @@ s    color: rgb(239, 239, 239, .8);
 }
 
 .entry-logo {
-    margin: 20px;
+    margin-bottom: 20px;
     width: 98%;
     max-width: 500px;
     height: auto;
