@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         tableBody.appendChild(tableRow)
         if (somethingElse[index].correct_answer !== answerArr[index]) {
             tableRow.classList.toggle('wrong')
-        }
+        } else {tableRow.classList.toggle('right')}
         let dataArray = [somethingElse[index].question,answerArr[index], somethingElse[index].correct_answer]
         dataArray.forEach(function(item,index){
             const tableData = document.createElement('td')

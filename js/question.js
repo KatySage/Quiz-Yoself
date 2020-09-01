@@ -88,10 +88,17 @@ let answerArr = [];
 let correctCounter = 0;
 submitQsButton.addEventListener('click', (e)=>{
     const resultDisplay = document.getElementById('result')
+    
     if (!answerSelected){
+        resultDisplay.classList.toggle('on')
         resultDisplay.innerHTML=('Please select an answer')
+    
     }
     else{
+        if (resultDisplay.innerHTML === 'Please select an answer'){
+            resultDisplay.classList.toggle('on')
+        }
+        resultDisplay.classList.toggle('on')
         //would changing this to an IIFE help?
         const buttonChange = () =>{
             answerButtons.forEach(btn=>{
@@ -135,5 +142,5 @@ const buttonNeutral = () =>{
         btn.classList.remove('incorrect')
         btn.classList.remove('selected')
     })
-    resultDisplay.innerHTML=""
+    resultDisplay.classList.toggle('on')
 }
