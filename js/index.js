@@ -13,6 +13,10 @@ function play() {
 function pause() {
     myMusic.pause();
 }
+const clickSound= document.getElementById("click");
+function playClick() {
+    clickSound.play();
+}
 
 document.addEventListener('DOMContentLoaded', () =>{
     
@@ -155,12 +159,13 @@ submitButton.addEventListener('click', e =>{
         const url = `https://opentdb.com/api.php?amount=${questionNum.value}&category=${categorySelect.value}&difficulty=${questionDiff.value.toLowerCase()}&type=multiple`
         console.log(url)
         get(url).then(questions =>{
+            
             questionsArr = questions.results
-            console.log(questionsArr)
-            console.log('after')
             localStorage.setItem("questions", JSON.stringify(questionsArr))
             localStorage.setItem("musicTime", JSON.stringify(myMusic.currentTime))
-            window.location.replace('gamescreen.html')
+            playClick()
+            let nextPage = setTimeout(function(){window.location.replace('gamescreen.html')},1000)
+            // window.location.replace('gamescreen.html')
         })
     }
 });
