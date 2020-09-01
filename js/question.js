@@ -9,7 +9,7 @@ const submitQsButton = document.getElementById('btnSubmit')
 const nextQsButton = document.getElementById('btnNext')
 const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
-
+console.log(musicPause)
 const updateCounter = () => {
     const counterDiv = document.getElementById('counter');
     const counterSpan = document.getElementById('counterSpan');
@@ -67,9 +67,10 @@ function pause() {
     myMusic.pause();
 }
 
-myMusic.autoplay = true;
+console.log(myMusic.autoplay)
 
-if(myMusic.autoplay && musicPause === 'play'){
+if(musicPause === 'play'){
+    myMusic.autoplay = true;
     myMusic.load()
     myMusic.play()
     console.log(myMusic.autoplay)
@@ -80,7 +81,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     questionIterator = 1;
     nextQsButton.style.display = "none"
     updateCounter();
-    play()
 })
 
 nextQsButton.addEventListener('click', (e)=>{
