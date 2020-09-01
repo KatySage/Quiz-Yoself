@@ -3,14 +3,29 @@ let categoryType = 10;
 let questionNumber = 10;
 let questionDifficulty = 'medium';
 const token = JSON.parse(localStorage.getItem('token'))
+const myMusic= document.getElementById("music");
+
+
+function play() {
+    myMusic.play();
+}
+
+function pause() {
+    myMusic.pause();
+}
 
 document.addEventListener('DOMContentLoaded', () =>{
+    
     localStorage.removeItem('questions')
     localStorage.removeItem('correctCounter')
     const questionNum = document.getElementById('questionNum')
-    //console.log("correct counter", correctCounter)
-    
-    
+    myMusic.autoplay = true;
+    if(myMusic.autoplay){
+        myMusic.load()
+        myMusic.play()
+        console.log(myMusic.autoplay)
+    }
+        
     const getQuestionDifficulty = () => {
         const questionDiff = document.getElementById('difficulty')
         const arrDiff = ["Easy", "Medium", "Hard"]

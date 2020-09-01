@@ -1,12 +1,16 @@
-// 'use strict';
-// const getToken = () => {
-//     const url = `https://opentdb.com/api_token.php?command=request`;
-//     get(url).then(token =>{
-//         const tokenThing = (token.token)
-//         localStorage.setItem('token',JSON.stringify(tokenThing))
-//         console.log(tokenThing)
-//     })
-    
-// }
-// getToken()
+'use strict';
+const myMusic= document.getElementById("music");
+function play() {
+    myMusic.play();
+}
 
+function pause() {
+    myMusic.pause();
+}
+
+myMusic.autoplay = true;
+    if(myMusic.autoplay){
+        myMusic.load()
+        myMusic.play()
+        console.log(myMusic.autoplay)
+    }

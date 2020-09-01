@@ -39,12 +39,30 @@ const updateButtons = () => {
     setButtonVal()
 };
 
+const myMusic= document.getElementById("music");
+function play() {
+    myMusic.play();
+}
+
+function pause() {
+    myMusic.pause();
+}
+
+myMusic.autoplay = true;
+    if(myMusic.autoplay){
+        myMusic.load()
+        myMusic.play()
+        console.log(myMusic.autoplay)
+    }
+
+
 
 document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
     updateCounter();
+    play()
 })
 
 nextQsButton.addEventListener('click', (e)=>{
