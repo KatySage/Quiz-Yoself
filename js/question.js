@@ -1,6 +1,7 @@
 'use strict';
 
 const storedQuestions = JSON.parse(localStorage.getItem("questions"))
+const musicTime = JSON.parse(localStorage.getItem("musicTime"))
 const questionAsked = document.getElementById('question')
 let questionIterator = 0;
 const submitQsButton = document.getElementById('btnSubmit')

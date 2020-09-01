@@ -74,6 +74,7 @@ numForm.addEventListener('change',event=>{
     }
 })
 form.addEventListener('change', event => {
+    console.log(myMusic.currentTime)
     console.log(event.target.id)
     event.preventDefault()
     let url = '';
@@ -158,6 +159,7 @@ submitButton.addEventListener('click', e =>{
             console.log(questionsArr)
             console.log('after')
             localStorage.setItem("questions", JSON.stringify(questionsArr))
+            localStorage.setItem("musicTime", JSON.stringify(myMusic.currentTime))
             window.location.replace('gamescreen.html')
         })
     }
