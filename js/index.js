@@ -19,7 +19,7 @@ function toggle() {
     }
 }
 
-const clickSound= document.getElementById("click");
+const clickSound = document.getElementById("click");
 function playClick() {
     clickSound.play();
 }
@@ -168,7 +168,6 @@ submitButton.addEventListener('click', e =>{
             
             questionsArr = questions.results
             localStorage.setItem("questions", JSON.stringify(questionsArr))
-            localStorage.setItem("musicTime", JSON.stringify(myMusic.currentTime))
             playClick()
             let nextPage = setTimeout(function(){window.location.replace('gamescreen.html')},1000)
             // window.location.replace('gamescreen.html')

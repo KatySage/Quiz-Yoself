@@ -490,6 +490,7 @@ margin: 70px auto; */
     display: inline-block;
     position: relative;
     transition: 0.5s;
+    outline: none;
 }
 .btn-next:after {
     content: "»";
