@@ -99,10 +99,12 @@ submitQsButton.addEventListener('click', (e)=>{
                     answerArr[questionIterator-1] = btn.innerHTML
                     if (answerArr[questionIterator-1] === storedQuestions[questionIterator-1].correct_answer){
                         resultDisplay.innerHTML = "CORRECT!!!"
+                        //resultDisplay.classList.toggle('correct')
                         correctCounter += 1
                         }
                     else {
                         resultDisplay.innerHTML = "INCORRECT!!!"
+                        //resultDisplay.classList.toggle('incorrect')
                     }
                 }
 

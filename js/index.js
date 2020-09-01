@@ -47,23 +47,42 @@ document.addEventListener('DOMContentLoaded', () =>{
     getFifteen()
 })
 const form = document.getElementById('selection-menu')
-form.addEventListener('change',event=>{
+const numForm = document.getElementById('other-form')
+numForm.addEventListener('change',event=>{
     event.preventDefault()
+    console.log(event.target.id)
+    console.log(document.querySelectorAll('.required').length > 0)
     if (event.target.id === 'questionNum' && document.querySelectorAll('.required').length > 0){
+        console.log('happened')
         document.getElementById('required').remove()
         
     }
 })
 form.addEventListener('change', event => {
+    console.log(event.target.id)
     event.preventDefault()
+    let url = '';
     if (event.target.id !== 'questionNum') {
     const getQuestionNum = () => {
         const categorySelect = document.getElementById('category')
         const questionDiff = document.getElementById('difficulty')
-        const url = `https://opentdb.com/api_count.php?category=${categorySelect.value}`
         const questionNum = document.getElementById('questionNum')
-        console.log(url)
         questionNum.innerHTML="Select number"
+        if (categorySelect.value===""){
+            for (let i=1; i <= 16; i++){
+                const numOption = document.createElement('option')
+                numOption.value = i.toString();
+                numOption.text = i.toString();
+                questionNum.appendChild(numOption);
+            }
+            return 0;
+        }
+        else{
+            url = `https://opentdb.com/api_count.php?category=${categorySelect.value}`
+        }
+        console.log('category URL', url)
+        console.log(url)
+        
 
         let maxTotal = 0;
         get(url).then(function(categoryQCount){
@@ -77,7 +96,8 @@ form.addEventListener('change', event => {
                     numOption.text = i.toString();
                     questionNum.appendChild(numOption);
                 }
-            } else {      
+            } 
+            else {      
                 maxTotal = categoryQCount.category_question_count[`total_${questionDiff.value.toLowerCase()}_question_count`]
                 if(maxTotal>=16){maxTotal = 15}
                 for (let i=1; i <= maxTotal; i++){
@@ -103,6 +123,11 @@ submitButton.addEventListener('click', e =>{
     let questionsArr = [];
     console.log(questionNum.value)
     if (questionNum.value === ""){
+        if(document.querySelectorAll('.required').length > 0)
+        {
+            document.getElementById('required').remove()
+        }
+        
         const errorMessage = document.createElement('p')
         const numQuestions = document.getElementById('numQuestions')
         numQuestions.appendChild(errorMessage)
