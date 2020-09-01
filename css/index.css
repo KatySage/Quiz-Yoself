@@ -382,7 +382,7 @@ margin: 70px auto; */
     text-align: center; */
 
     background-color: #21c36f;
-    border: none;
+    border: 1px solid white;
     border-radius: 50px;
     cursor: pointer;
     font-size: medium;
@@ -443,6 +443,7 @@ margin: 70px auto; */
     border: none;
     background-color: #428CD4;
     border-radius: 50px;
+    border: 1px solid #efefef;
     font-size: medium;
     font-weight: 700;
     color: #efefef;
@@ -454,6 +455,11 @@ margin: 70px auto; */
     cursor: pointer;
     width: 150px;
     border: 1px solid white;
+}
+
+.btn-next:hover {
+    /* background-color: #004E9A; */
+    color: #&#x2192;
 }
 
 .btn-next:focus {
