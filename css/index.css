@@ -290,6 +290,11 @@ select {
     border-color: var(--accentFg);
     background-color: var(--accentFg);
     }
+#toggle{
+    width: 18%;
+    height: auto;
+    margin: 0px;
+}
 
     @media screen and (max-height: 600px){
         select {
@@ -502,15 +507,6 @@ margin: 70px auto; */
     opacity: 1;
     right: 46px;
 }
-
-
-
-
-
-/* .btn-next:focus {
-    outline: none;
-} */
-
 .counterSpan {
     color: #efefef;
 }
