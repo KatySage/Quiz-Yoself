@@ -1,6 +1,7 @@
 'use strict';
 
 const storedQuestions = JSON.parse(localStorage.getItem("questions"))
+const musicTime = JSON.parse(localStorage.getItem("musicTime"))
 const questionAsked = document.getElementById('question')
 let questionIterator = 0;
 const submitQsButton = document.getElementById('btnSubmit')
@@ -39,18 +40,22 @@ const updateButtons = () => {
     setButtonVal()
 };
 
-
-
-
+const myMusic= document.getElementById("music");
 function play() {
-    const myMusic= document.getElementById("music");
     myMusic.play();
 }
 
 function pause() {
-    const myMusic= document.getElementById("music");
     myMusic.pause();
 }
+
+myMusic.autoplay = true;
+    if(myMusic.autoplay){
+        myMusic.load()
+        myMusic.play()
+        console.log(myMusic.autoplay)
+    }
+
 
 
 document.addEventListener('DOMContentLoaded', ()=>{
