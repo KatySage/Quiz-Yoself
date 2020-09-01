@@ -47,31 +47,22 @@
             <div id='submitForm' class="play-game">
                 GAME ON!
             </div>
+            </form>
                 <audio  id="music">
-                <source src="sfx/main-Oman.mp3" type="audio/mp3">
+                    <source src="sfx/intro-Oman.mp3" type="audio/mp3">
                 </audio>
-                
-                <button onclick="play()" type="button">Play </button>
-                <button onclick="pause()" type="button">Pause</button>  
-                
-            
-            <!-- <p>
-                <a href="entry.html" class="back-selection">Home &#10558;</a>
-            </p> -->
-                </form>    
+                <audio  id="click">
+                    <source src="sfx/click.ogg" type="audio/ogg">
+                </audio>
+                <img id="toggle" class="play" onclick="toggle()" src="images/pause.png">    
         </main>
     </div>
     
 </body>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <ul class="links">
-            <!-- <li><a class="active" href="selection.html">Selection</a></li> -->
-            <!-- <li><a class="active" href="https://github.com/KatySage/Trivia">On Github</a></li> -->
         </ul>
-        <!-- <section class="copyright">
-            <p>&#169; Yogurt Board</p>
-        </section> -->
-    </footer> 
+    </footer>  -->
 <script src="js/get.js"></script>
 <script src="js/index.js"></script>    
 </html>

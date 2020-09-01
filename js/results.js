@@ -6,47 +6,68 @@ displayTable.style.display = "none"
 console.log(storedCorrect)
 const resultsButton = document.getElementById('moreResults')
 let somethingElse = JSON.parse(localStorage.getItem('questions'))
+const playAgain = document.getElementById('playAgain')
 
 const resultDiv = document.getElementById('result')
 const funnyStatement = document.getElementById('funny')
 const y = (storedCorrect/somethingElse.length)
 
-const myMusic= document.getElementById("music");
-function play() {
-    myMusic.play();
+const clickSound2= document.getElementById("click");
+function playClick() {
+    clickSound2.play();
 }
+const appSound= document.getElementById("applause");
+function appPlay() {
+    appSound.play();
+}
+function appStop() {
+    appSound.pause();
+}
+const booSound= document.getElementById("boos");
+function booPlay() {
+    booSound.play();
+}
+function booStop() {
+    booSound.pause();
+}
+// const myMusic= document.getElementById("music");
+// function play() {
+//     myMusic.play();
+// }
 
 function pause() {
     myMusic.pause();
-}
-
-myMusic.autoplay = true;
-if(myMusic.autoplay){
-    myMusic.load()
-    myMusic.play()
-    console.log(myMusic.autoplay)
 }
 
 
 (function(){resultDiv.innerHTML = (`You got ${storedCorrect} out of ${somethingElse.length} correct!`)
     if ( y < .1) {
         funnyStatement.innerHTML = "You might get better results if you answered randomly."
+        booPlay()
     } if (y < .3 && y >= .1) {
         funnyStatement.innerHTML = "Not too shabby! These are really difficult."
+        booPlay()
     } if (y < .5 && y >= .3) {
-        funnyStatement.innerHTML = "That's pretty good! You must have heard of this topic before."   
+        funnyStatement.innerHTML = "That's pretty good! You must have heard of this topic before." 
+        booPlay()  
     } if (y == .5) {
         funnyStatement.innerHTML = "You got exactly half of these correct! You get half a pony! You pick which half." 
+        appPlay()
     } if (y > .5 && y <=.75) {
-            funnyStatement.innerHTML = "You're doing amazing! Your brain must be really wrinkly!"
-        } if (y > .75 && y <= 1) {
+        funnyStatement.innerHTML = "You're doing an amazing job! Your brain must be really wrinkly!"
+        appPlay()
+        } 
+    if (y > .75 && y <= 1) {
         funnyStatement.innerHTML = "That's incredible! You're practically a walking encyclopedia!"
+        appPlay()
     } if (y == 1) {
         funnyStatement.innerHTML = "You got EVERY question correct! That's incredible!"}
+        appPlay()
 })()
 
 //fills in the table data from your results
 document.addEventListener('DOMContentLoaded', ()=>{
+    
     const answerArr = JSON.parse(localStorage.getItem("answerArr"))
     const somethingElse = JSON.parse(localStorage.getItem('questions'))
     const tableBody = document.getElementById('tableBody')
@@ -80,8 +101,13 @@ const myFunction = () => {
 
 resultsButton.addEventListener('click', e=>{
     e.preventDefault()
+    playClick()
     myFunction()
     const footerStyle = document.getElementById('footer')
     footerStyle.classList.toggle('extra_detail')
 })
-
+playAgain.addEventListener('click', e=>{
+    e.preventDefault()
+    playClick()
+    let nextPage = setTimeout(function(){window.location.replace('selection.html')},1000)
+})

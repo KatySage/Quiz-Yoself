@@ -20,6 +20,17 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+
+
+body {
+    background: #efefef;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 /* OUR TEAM */
 
 .text {
@@ -219,6 +230,7 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height:56px;
 }
 
 .copyright {
@@ -274,5 +286,6 @@ a {
       
         align-items: center;
     }
+}
 
 

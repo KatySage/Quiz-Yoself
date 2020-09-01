@@ -6,12 +6,22 @@ const token = JSON.parse(localStorage.getItem('token'))
 const myMusic= document.getElementById("music");
 
 
-function play() {
-    myMusic.play();
+function toggle() {
+    const image = document.getElementById("toggle");
+    if (image.className === "play") {
+        image.className = "pause"
+        image.src = "images/play.png";
+        myMusic.pause();
+    } else {
+        image.className = "play"
+        image.src = "images/pause.png";
+        myMusic.play();
+    }
 }
 
-function pause() {
-    myMusic.pause();
+const clickSound = document.getElementById("click");
+function playClick() {
+    clickSound.play();
 }
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -154,11 +164,14 @@ submitButton.addEventListener('click', e =>{
         const url = `https://opentdb.com/api.php?amount=${questionNum.value}&category=${categorySelect.value}&difficulty=${questionDiff.value.toLowerCase()}&type=multiple`
         console.log(url)
         get(url).then(questions =>{
+            
             questionsArr = questions.results
-            console.log(questionsArr)
-            console.log('after')
             localStorage.setItem("questions", JSON.stringify(questionsArr))
-            window.location.replace('gamescreen.html')
+            const image = document.getElementById("toggle");
+            localStorage.setItem('paused',JSON.stringify(image.classList))
+            playClick()
+            let nextPage = setTimeout(function(){window.location.replace('gamescreen.html')},1000)
+            // window.location.replace('gamescreen.html')
         })
     }
 });
