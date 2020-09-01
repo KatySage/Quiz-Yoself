@@ -19,7 +19,7 @@ function toggle() {
     }
 }
 
-const clickSound= document.getElementById("click");
+const clickSound = document.getElementById("click");
 function playClick() {
     clickSound.play();
 }
@@ -84,7 +84,6 @@ numForm.addEventListener('change',event=>{
     }
 })
 form.addEventListener('change', event => {
-    console.log(myMusic.currentTime)
     console.log(event.target.id)
     event.preventDefault()
     let url = '';
@@ -168,7 +167,8 @@ submitButton.addEventListener('click', e =>{
             
             questionsArr = questions.results
             localStorage.setItem("questions", JSON.stringify(questionsArr))
-            localStorage.setItem("musicTime", JSON.stringify(myMusic.currentTime))
+            const image = document.getElementById("toggle");
+            localStorage.setItem('paused',JSON.stringify(image.classList))
             playClick()
             let nextPage = setTimeout(function(){window.location.replace('gamescreen.html')},1000)
             // window.location.replace('gamescreen.html')

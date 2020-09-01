@@ -2,13 +2,14 @@
 
 const storedQuestions = JSON.parse(localStorage.getItem("questions"))
 const musicTime = JSON.parse(localStorage.getItem("musicTime"))
+const musicPause = JSON.parse(localStorage.getItem('paused'))
 const questionAsked = document.getElementById('question')
 let questionIterator = 0;
 const submitQsButton = document.getElementById('btnSubmit')
 const nextQsButton = document.getElementById('btnNext')
 const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
-
+console.log(musicPause)
 const updateCounter = () => {
     const counterDiv = document.getElementById('counter');
     const counterSpan = document.getElementById('counterSpan');
@@ -39,23 +40,23 @@ const updateButtons = () => {
     }
     setButtonVal()
 };
-const clickSound= document.getElementById("click");
+const clickSound1= document.getElementById("click");
 function playClick() {
-    clickSound.play();
+    clickSound1.play();
 }
-const appSound= document.getElementById("applause");
+const appSound2= document.getElementById("applause");
 function appPlay() {
-    appSound.play();
+    appSound2.play();
 }
 function appStop() {
-    appSound.pause();
+    appSound2.pause();
 }
-const booSound= document.getElementById("boos");
+const booSound2= document.getElementById("boos");
 function booPlay() {
-    booSound.play();
+    booSound2.play();
 }
 function booStop() {
-    booSound.pause();
+    booSound2.pause();
 }
 const myMusic= document.getElementById("music");
 function play() {
@@ -66,19 +67,20 @@ function pause() {
     myMusic.pause();
 }
 
-myMusic.autoplay = true;
-    if(myMusic.autoplay){
-        myMusic.load()
-        myMusic.play()
-        console.log(myMusic.autoplay)
-    }
+console.log(myMusic.autoplay)
+
+if(musicPause === 'play'){
+    myMusic.autoplay = true;
+    myMusic.load()
+    myMusic.play()
+    console.log(myMusic.autoplay)
+}
 
 document.addEventListener('DOMContentLoaded', ()=>{
     updateButtons();
     questionIterator = 1;
     nextQsButton.style.display = "none"
     updateCounter();
-    play()
 })
 
 nextQsButton.addEventListener('click', (e)=>{

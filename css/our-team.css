@@ -6,6 +6,18 @@ html {
     font-size: 16px;
     box-sizing: border-box;
     font-family: 'Noto Sans TC', sans-serif;
+    background-color: #428CD4;
+}
+
+
+
+body {
+    background: #efefef;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -23,7 +35,7 @@ body::-webkit-scrollbar {
 
 .text {
     padding: 16px;
-    margin: 0 50px;
+    margin: 0 32px;
 }
 
 .ourteam-logo {
@@ -31,6 +43,7 @@ body::-webkit-scrollbar {
     max-width: 250px;
     height: auto;
     margin-top: 20px;
+    padding-bottom: 16px;
 }
 
 .creator-pic {
@@ -72,8 +85,8 @@ h1 {
 .thick { font-weight: 900; }
 
 .header {
-    background-color: #efefef;
-    color: #464345;
+    background-color: #428CD4;
+    /* color: #464345; */
     margin: 0 auto 8px;
     position: fixed;
     top: 0;
@@ -106,12 +119,24 @@ h1 {
 .links li {
     padding-top: 4px;
     list-style: none; 
-    color:#464345;
+    color:#efefef;
+}
+
+.links ul li:hover {
+    color: #efefef;
 }
 
 .links ul {
     margin: 0 auto;
     width: 100%;
+}
+
+
+
+
+.links ul li:hover {
+    text-decoration: none;
+    color: #efefef;
 }
 
 
@@ -121,32 +146,39 @@ h1 {
 }
 
 
-
-
-
-.active {
-    padding: 32px;
-    list-style: none; 
-    color:#464345;
+.active:hover {
+    color: #efefef;
 }
 
-.active:hover {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+.active {
+    padding: 5px;
+    list-style: none; 
+    color:#efefef;
 }
 
 .github {
     color: #004E9A;
+    
     font-weight: 700;
     font-size: large;
 }
+.github:hover {
+    color: #428CD4;
+    transition: .3s;
+}
 
 .github:visited {
-    color: #004E9A;
+    color: 428CD4;
 }
 
 .active:visited {
     text-decoration: none;
-    color: #464345; 
+    color: #efefef; 
+}
+
+.active:hover {
+    color: white;
+    transition: 0.3s;
 }
 
 
@@ -154,11 +186,11 @@ h1 {
 
 
 a {
-    /* text-transform: uppercase; */
     text-decoration: none;
     outline: none;
+    color: #efefef;
 }
-.link-2 {
+/* .link-2 {
     color: #464345;
     display: flex;
     font-size: 36px;
@@ -184,10 +216,11 @@ a {
 .link-2 a, .link-2 a:before {
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
-}
+} */
 
 .footer-our-team {
-    background-color: #efefef;
+    background-color: #428CD4;
+    color: #efefef;
     margin: 0 auto;
     /* position: fixed; */
     bottom: 0;
@@ -200,6 +233,10 @@ a {
     height:56px;
 }
 
+.copyright {
+    padding: 0px;
+}
+
 
 @media screen and (min-width: 320px) {
 .active {
@@ -207,7 +244,30 @@ a {
     list-style: none; 
     color:#464345;
 }
+.text {
+    padding: 16px;
+    margin: 0 8px;
 }
+}
+
+/* @media screen and (min-width: 640px) {
+    .active {
+        padding: 32px;
+        list-style: none; 
+        color:#464345;
+    }
+
+    .creators-wrapper { 
+        color: #464345;
+        margin: 32px 0;
+        padding-top: 80px;
+        width: 100%;
+        height: auto;
+        background: #efefef;
+      
+        align-items: center;
+    } */
+
 
 @media screen and (min-width: 960px) {
     .active {
@@ -215,6 +275,17 @@ a {
         list-style: none; 
         color:#464345;
     }
+
+    .creators-wrapper { 
+        color: #464345;
+        margin: 32px 0;
+        padding-top: 80px;
+        width: 100%;
+        height: auto;
+        background: #efefef;
+      
+        align-items: center;
     }
+}
 
 
