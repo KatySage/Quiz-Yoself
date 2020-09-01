@@ -656,9 +656,9 @@ margin: 70px auto; */
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
-    
 }
-
+.full-results::-webkit-scrollbar {
+    display: none;}
 .results-table{
     border-radius: 20px;
     /* display: flex;
@@ -693,8 +693,6 @@ margin: 70px auto; */
     font-size: medium;
     font-weight: 700;
     color: #efefef;
-    padding-left: 23px;
-    padding-right: 23px;
     padding: 13px 30px 13px 30px;
     margin: 10px auto;
     text-decoration: none;
@@ -734,24 +732,102 @@ margin: 70px auto; */
     font-size: 12px;
 }
 
-@media screen and (min-width: 960px){
-    .questionColumn{
-        font-size: 1rem;
-    }
-    /* .full-results{
-        width: 25%;
-    } */
-}
-
 @media screen and (min-width: 480px){
     .question{
         margin: 5px auto;
     }
 }
 
-@media screen and (min-height: 750px){
+@media screen and (min-height: 830px){
     .footer.extra_detail{
         position: fixed;
     }
 }
 
+@media screen and (max-height: 659px){
+    .body-results{
+        overflow-y: hidden;
+    }
+    .full-results{
+        width:94%; 
+        margin-left:3%; 
+        margin-right:3%;
+        max-height: 150px;}
+    .results-logo {
+        margin: 0px;
+        width: 30%;
+    }
+    #funny{
+        margin: 4px;
+    }
+    .more-results {
+        padding: 13px 16px 13px 16px;
+        margin: 10px auto;
+    }
+    
+    .play-again{
+        padding: 13px 30px 13px 30px;
+        margin: 10px auto;
+        text-decoration: none;
+        cursor: pointer;
+        width: 150px;
+    }
+    .result-header{
+        margin: 0px auto
+    }
+    .questionColumn{
+        font-size: 12px;
+    }
+}
+@media screen and (min-height: 660px){
+    .body-results{
+        overflow-y: hidden;
+    }
+    .full-results{
+        width:94%; 
+        margin-left:3%; 
+        margin-right:3%;
+        max-height: 200px;}
+    .results-logo {
+        margin: 0px;
+        width: 50%;
+    }
+    #funny{
+        margin: 4px;
+    }
+    .more-results {
+        padding: 13px 16px 13px 16px;
+        margin: 10px auto;
+    }
+    
+    .play-again{
+        padding: 13px 30px 13px 30px;
+        margin: 10px auto;
+        text-decoration: none;
+        cursor: pointer;
+        width: 150px;
+    }
+    .result-header{
+        margin: 0px auto
+    }
+    .questionColumn{
+        font-size: 12px;
+    }
+}
+@media screen and (min-height: 749px){
+    .body-results{
+        overflow-y: hidden;
+    }
+    .full-results{
+        width:94%; 
+        margin-left:3%; 
+        margin-right:3%;
+        max-height: 300px;}
+    .results-logo {
+        margin: 0px;
+        width: 60%;
+    }
+    .questionColumn{
+        font-size: 1rem;
+    }
+}
