@@ -607,6 +607,7 @@ margin: 70px auto; */
     .btn-next {
         padding: 13px 23px 13px 23px;
     }
+}
 @media screen and (min-height: 750px){
     .gamescreen-body{
         /* overflow-y: hidden; */

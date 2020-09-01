@@ -39,18 +39,22 @@ const updateButtons = () => {
     setButtonVal()
 };
 
-
-
-
+const myMusic= document.getElementById("music");
 function play() {
-    const myMusic= document.getElementById("music");
     myMusic.play();
 }
 
 function pause() {
-    const myMusic= document.getElementById("music");
     myMusic.pause();
 }
+
+myMusic.autoplay = true;
+    if(myMusic.autoplay){
+        myMusic.load()
+        myMusic.play()
+        console.log(myMusic.autoplay)
+    }
+
 
 
 document.addEventListener('DOMContentLoaded', ()=>{
