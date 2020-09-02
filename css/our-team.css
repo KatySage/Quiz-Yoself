@@ -215,7 +215,7 @@ a {
 .active {
     padding: 16px;
     list-style: none; 
-    color:#464345;
+    color:#efefef;
 }
 .text {
     padding: 16px;
@@ -246,7 +246,7 @@ a {
     .active {
         padding: 32px;
         list-style: none; 
-        color:#464345;
+        color:#efefef;
     }
 
     .creators-wrapper { 
