@@ -142,7 +142,7 @@ h1 {
 
 .links ul li:visited {
     text-decoration: none;
-    color: #464345;
+    color: #efefef;
 }
 
 
@@ -190,33 +190,6 @@ a {
     outline: none;
     color: #efefef;
 }
-/* .link-2 {
-    color: #464345;
-    display: flex;
-    font-size: 36px;
-    
-}
-.link-2 a:visited{
-    color: #464345;
-}
-.link-2 a:hover {
-    color: #5CAAEF;
-}
-.link-2 a:before {
-    content: '';
-    border-bottom: solid 1px #5CAAEF;
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%;
-    opacity: 0;
-}
-.link-2 a:hover:before {
-    opacity: 1.0;
-}
-.link-2 a, .link-2 a:before {
-    -webkit-transition: all 0.2s ease;
-            transition: all 0.2s ease;
-} */
 
 .footer-our-team {
     background-color: #428CD4;
