@@ -1,35 +1,52 @@
-
-# Jeopardy
-
+## Quiz Yo'Self 
 
 
+## Motivation behind the game 
+To build a game that utilized a RESTful API to deliver unique content on each play. The game needed to be responsive in all sizes and work well on both desktop and mobile screens. We wanted to highlight a strong udnerstanding of both UI/UX design and CSS as well as interactive Javascript. 
 
-## Description
-                
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus justo quis ligula accumsan porttitor. Curabitur nec sem pretium, dapibus augue sed, tincidunt ante. Ut id sollicitudin libero. Phasellus ut mattis augue. Aliquam porttitor nec augue id congue. Etiam non magna eu lorem cursus fermentum. Cras ac ultricies neque. Donec scelerisque quam eget dolor venenatis eleifend. Nunc nunc lacus, ultricies sed libero et, blandit commodo ex. In vel tempor elit. Donec maximus erat quis tellus tincidunt, sit amet varius felis aliquet. Curabitur ac lorem sit amet ipsum viverra consectetur eget vel dui.
-                
-## Motivation
+## Tools used 
+* HTML5
+* CSS3
+* RESTful APIs
+* Javascript ES6
+* Adobe Photoshop
+* Adobe Audition
+* Adobe Indesign
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus justo quis ligula accumsan porttitor. Curabitur nec sem pretium, dapibus augue sed, tincidunt ante. Ut id sollicitudin libero. Phasellus ut mattis augue. Aliquam porttitor nec augue id congue. Etiam non magna eu lorem cursus fermentum. Cras ac ultricies neque. Donec scelerisque quam eget dolor venenatis eleifend. Nunc nunc lacus, ultricies sed libero et, blandit commodo ex. In vel tempor elit. Donec maximus erat quis tellus tincidunt, sit amet varius felis aliquet. Curabitur ac lorem sit amet ipsum viverra consectetur eget vel dui.
-                
-                
-## Tech/framework
-            
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus justo quis ligula accumsan porttitor. Curabitur nec sem pretium, dapibus augue sed, tincidunt ante. Ut id sollicitudin libero. Phasellus ut mattis augue. Aliquam porttitor nec augue id congue. Etiam non magna eu lorem cursus fermentum. Cras ac ultricies neque. Donec scelerisque quam eget dolor venenatis eleifend. Nunc nunc lacus, ultricies sed libero et, blandit commodo ex. In vel tempor elit. Donec maximus erat quis tellus tincidunt, sit amet varius felis aliquet. Curabitur ac lorem sit amet ipsum viverra consectetur eget vel dui.
-                
-## Installation
+## Challenges and Solutions
+* Challenge: We needed to get data to transfer between HTML pages to ensure the same questions and the results of answers transfered throughout the game. 
+* Solution: We utilized local storage throughout the game to create and store data so that it could be accessed on different pages. 
+* Challenge: Create responsive design on every page for all browser sizes.
+* Solution: We utilized a mix of flexbox CSS3 and media querys to ensure proper sizing and break points throughout the game to keep users from scrolling unnecessarily. 
+* Challenge: API only delivers a limited number of questions throughout the playthrough, select a number was returning too many options. 
+* Solution: Utilized a second part of the API to query total questions available and then built the number of questions logic into the dynamic selection Javascript to ensure only the correct number questions were available.
+* Challenge: Wanted to add sound to the site throughout the game play. 
+* Solution: Utilized event handlers and timeouts to proprely manage async between clicks and sounds on the stack to ensure proper timing. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus justo quis ligula accumsan porttitor. Curabitur nec sem pretium, dapibus augue sed, tincidunt ante. Ut id sollicitudin libero. Phasellus ut mattis augue. Aliquam porttitor nec augue id congue. Etiam non magna eu lorem cursus fermentum. Cras ac ultricies neque. Donec scelerisque quam eget dolor venenatis eleifend. Nunc nunc lacus, ultricies sed libero et, blandit commodo ex. In vel tempor elit. Donec maximus erat quis tellus tincidunt, sit amet varius felis aliquet. Curabitur ac lorem sit amet ipsum viverra consectetur eget vel dui.
+
+## Design evolution
+![](/ReadmePNG/design.png)
 
 
-## Screenshots
-                
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus justo quis ligula accumsan porttitor. Curabitur nec sem pretium, dapibus augue sed, tincidunt ante. Ut id sollicitudin libero. Phasellus ut mattis augue. Aliquam porttitor nec augue id congue. Etiam non magna eu lorem cursus fermentum. Cras ac ultricies neque. Donec scelerisque quam eget dolor venenatis eleifend. Nunc nunc lacus, ultricies sed libero et, blandit commodo ex. In vel tempor elit. Donec maximus erat quis tellus tincidunt, sit amet varius felis aliquet. Curabitur ac lorem sit amet ipsum viverra consectetur eget vel dui.
-        
-## Our team
+![](/ReadmePNG/final_design.png)
 
+
+## Link
+* https://practical-goodall-353986.netlify.app/index.html
+
+## Goals for next iteration 
+* Add special / hard modes
+* Add cheat codes
+* Update to take T/F Questions
+* Timer / Timed questions
+* Floating answers on hard mode
+* Correct / Incorrect animation
+* Competitive play
+
+## Credits
+* Shaiah Emigh-Doyle
+* Kevin Jeffers
 * Katy Sage
 * Eric Schorling
-* Kevin Jeffers
-* Shaiah Emigh-Doyle
-            
+* Open Trivia Database
+* 
