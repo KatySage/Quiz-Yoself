@@ -25,14 +25,15 @@ To build a game that utilized a RESTful API to deliver unique content on each pl
 
 
 ## Design evolution
-![](/ReadmePNG/design.png)
+![](/images/screenshots/entry_page_large.png)
 
+![](/images/screenshots/questions_correct_mobile.png)
 
-![](/ReadmePNG/final_design.png)
+![](/images/screenshots/results_table_mobile.png)
 
 
 ## Link
-* https://practical-goodall-353986.netlify.app/index.html
+* https://quizyoself.netlify.app/
 
 ## Goals for next iteration 
 * Add special / hard modes
@@ -49,4 +50,3 @@ To build a game that utilized a RESTful API to deliver unique content on each pl
 * Katy Sage
 * Eric Schorling
 * Open Trivia Database
-* 
