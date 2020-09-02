@@ -142,7 +142,9 @@ body {
 .required {
     color: red;
 }
-
+#toggle{
+    cursor: pointer;
+}
 .lets-begin, .play-game {
     background-color: #428CD4;
     border-radius: 50px;
