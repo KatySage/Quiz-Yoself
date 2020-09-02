@@ -9,7 +9,8 @@ const submitQsButton = document.getElementById('btnSubmit')
 const nextQsButton = document.getElementById('btnNext')
 const answerButtons = document.querySelectorAll('#btn')
 let answerSelected = false;
-console.log(musicPause)
+console.log(musicPause['0'])
+
 const updateCounter = () => {
     const counterDiv = document.getElementById('counter');
     const counterSpan = document.getElementById('counterSpan');
@@ -69,7 +70,7 @@ function pause() {
 
 console.log(myMusic.autoplay)
 
-if(musicPause === 'play'){
+if(musicPause['0'] === 'play'){
     myMusic.autoplay = true;
     myMusic.load()
     myMusic.play()
@@ -134,8 +135,7 @@ submitQsButton.addEventListener('click', (e)=>{
         if (resultDisplay.innerHTML === 'Please select an answer'){
             resultDisplay.classList.toggle('on')
         }
-        resultDisplay.classList.toggle('on')
-        //would changing this to an IIFE help?
+        resultDisplay.classList.toggle('on')   
         const buttonChange = () =>{
             answerButtons.forEach(btn=>{
                 if (btn.classList.contains("selected")){
