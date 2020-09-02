@@ -33,7 +33,7 @@ To build a game that utilized a RESTful API to deliver unique content on each pl
 
 
 ## Link
-* https://practical-goodall-353986.netlify.app/index.html
+* https://quizyoself.netlify.app/
 
 ## Goals for next iteration 
 * Add special / hard modes
