@@ -89,8 +89,8 @@ nextQsButton.addEventListener('click', (e)=>{
     if (questionIterator === storedQuestions.length){
         localStorage.setItem("correctCounter", JSON.stringify(correctCounter))
         localStorage.setItem('answerArr', JSON.stringify(answerArr))
-        correctCounter = 0
-        answerArr =[]
+        // correctCounter = 0
+        // answerArr =[]
         playClick()
         let nextPage = setTimeout(function(){window.location.replace('results.html')},1000)
     }
